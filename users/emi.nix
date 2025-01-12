@@ -1,6 +1,9 @@
-{ lib, pkgs, config, ... }:
-
 {
+  lib,
+  pkgs,
+  config,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "emi";
@@ -73,18 +76,18 @@
       "$terminal" = "alacritty";
       bind = [
         "$mod, Q, killactive,"
-	"$mod, Return, exec, $terminal"
-	"$mod SHIFT, p, exit,"
+        "$mod, Return, exec, $terminal"
+        "$mod SHIFT, p, exit,"
       ];
     };
   };
 
   programs.git = {
     enable = true;
-    userName  = "hf-ikea";
+    userName = "hf-ikea";
     userEmail = "bluehairguyiscool@gmail.com";
     extraConfig = {
-      push = { autoSetupRemote = true; };
+      push = {autoSetupRemote = true;};
     };
   };
 
@@ -94,12 +97,12 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      ls = "ls -la";
+      ls = "ls --color=auto";
     };
     history.save = 10000;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
+      plugins = ["git"];
     };
   };
 }
