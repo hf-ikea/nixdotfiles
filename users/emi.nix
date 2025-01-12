@@ -32,6 +32,7 @@ in
     pkgs.htop
     pkgs.fastfetch
     pkgs.ark
+    pkgs.posy-cursors
 
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
