@@ -27,6 +27,7 @@
     pkgs.firefox
     pkgs.vesktop
     pkgs.hyprshot
+    pkgs.wl-clipboard
 
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
@@ -133,5 +134,10 @@
       enable = true;
       plugins = ["git"];
     };
+  };
+
+  programs.neovim = {
+    viAlias = true;
+    vimAlias = true;
   };
 }
