@@ -30,7 +30,7 @@ in
     pkgs.wl-clipboard
     pkgs.prismlauncher
     pkgs.htop
-
+    pkgs.fastfetch
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
