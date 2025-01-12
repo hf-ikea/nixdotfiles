@@ -63,6 +63,7 @@
 
   programs.waybar = {
     enable = true;
+    style = builtins.readFile ../modules/waybar.css;
     settings = import ../modules/waybar.nix;
   };
 
