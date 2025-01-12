@@ -1,8 +1,10 @@
 {
   "exec-once" = "waybar";
+
   env = [
     "HYPRCURSOR_THEME,Posys-Cursor-Scalable"
     "HYPRCURSOR_SIZE,24"
+    "XCURSOR_THEME,Posys-Cursor-Scalable"
   ];
 
   general = {
@@ -13,7 +15,6 @@
     "col.inactive_border" = "rgb(595959)";
     resize_on_border = false;
     allow_tearing = false;
-    #layout = "dwindle";
   };
 
   decoration = {
