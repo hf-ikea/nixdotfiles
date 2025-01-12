@@ -1,5 +1,5 @@
 {
-  "exec-one" = "waybar & hyprpaper";
+  "exec-once" = "waybar & hyprpaper";
   general = {
     gaps_in = 5;
     gaps_out = 10;
