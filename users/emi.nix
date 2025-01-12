@@ -31,6 +31,7 @@ in
     pkgs.prismlauncher
     pkgs.htop
     pkgs.fastfetch
+    pkgs.ark
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
@@ -114,5 +115,5 @@ in
   programs.neovim = {
     viAlias = true;
     vimAlias = true;
-  };
+  }; 
 }
