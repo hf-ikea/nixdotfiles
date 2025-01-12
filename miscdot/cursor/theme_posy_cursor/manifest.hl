@@ -1,4 +1,4 @@
-name = Posys-Cursor-Scalable
+name = posy_cursor_wayland
 description = Posy's infamous cursors, unrasterized and ported to Hyprcursor
 author = Michiel De Boer, Synth Morxemplum
 version = 1.2

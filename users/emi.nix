@@ -46,6 +46,8 @@ in
   home.sessionVariables = {
     EDITOR = "nvim";
     TERMINAL = "alacritty";
+    XCURSOR_THEME = "posy_cursor_x";
+    XCURSOR_SIZE = 24;
   };
 
   # Let Home Manager install and manage itself.

@@ -2,10 +2,8 @@
   "exec-once" = "waybar";
 
   env = [
-    "HYPRCURSOR_THEME,Posys-Cursor-Scalable"
+    "HYPRCURSOR_THEME,posy_cursor_wayland"
     "HYPRCURSOR_SIZE,24"
-    "XCURSOR_THEME,Posy's Cursor"
-    "XCURSOR_SIZE,24"
   ];
 
   general = {
