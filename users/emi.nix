@@ -4,10 +4,6 @@
   config,
   ...
 }: {
-  imports = [
-    ../modules/hyprpaper.nix
-  ];
-
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "emi";
@@ -65,6 +61,20 @@
     enable = true;
     style = builtins.readFile ../modules/waybar.css;
     settings = import ../modules/waybar.nix;
+  };
+
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      ipc = "off";
+      preload = [
+        "../users/emipaper.png"
+      ];
+
+      wallpaper = [
+        ",../users/emipaper.png"
+      ];
+    };
   };
 
   programs.wofi = {
