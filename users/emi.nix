@@ -66,9 +66,10 @@
   services.hyprpaper = {
     enable = true;
     settings = {
-      ipc = "off";
+      ipc = false;
+      splash = false;
       preload = [
-        "../users/emipaper.png"
+        "./emipaper.png"
       ];
 
       wallpaper = [
