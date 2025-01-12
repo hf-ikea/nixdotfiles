@@ -1,19 +1,28 @@
 warning: Git tree '/home/emi/nixos' is dirty
-error:
-       … while calling the 'seq' builtin
-         at /nix/store/v0g0bxsd5gw6k0jz2855f8h7l1218925-source/lib/modules.nix:334:18:
-          333|         options = checked options;
-          334|         config = checked (removeAttrs config [ "_module" ]);
-             |                  ^
-          335|         _module = checked (config._module);
-
-       … while evaluating a branch condition
-         at /nix/store/v0g0bxsd5gw6k0jz2855f8h7l1218925-source/lib/modules.nix:273:9:
-          272|       checkUnmatched =
-          273|         if config._module.check && config._module.freeformType == null && merged.unmatchedDefns != [] then
-             |         ^
-          274|           let
-
-       (stack trace truncated; use '--show-trace' to show the full, detailed trace)
-
-       error: path '/nix/store/czwy1ck355w870sz93qg1wb7hb6lpw8d-source/modules/hyprpaper.nix' does not exist
+building the system configuration...
+warning: Git tree '/home/emi/nixos' is dirty
+these 8 derivations will be built:
+  /nix/store/vqb0s92mbgbqkqdzgx1g7vpk3ldxa7g9-hm_hyprhyprpaper.conf.drv
+  /nix/store/s24i3vdn8kfky03yw5bsg6012bbbmh4z-hyprpaper.service.drv
+  /nix/store/39s1v6pv611ick19yjf4rznzmfpnwmr2-home-manager-files.drv
+  /nix/store/zfyrz4bkjq0k3ji7v83ya5nfy925bf9l-home-manager-generation.drv
+  /nix/store/92f9w5rn6h1n65gl465mmj0r9s5i9s8p-unit-home-manager-emi.service.drv
+  /nix/store/lbcazzcss4m3fvqf9f5zasl8wawrlghx-system-units.drv
+  /nix/store/a897bfqjl356xxf8hdgybgkn3qqdwm8c-etc.drv
+  /nix/store/p6ild2731mpa970rl6m4dx5f7fsy8vsp-nixos-system-celeste-25.05.20250108.bffc22e.drv
+this path will be fetched (0.14 MiB download, 0.57 MiB unpacked):
+  /nix/store/m682jh2hxa92qaay3bvb5ga4n9s48n1k-hyprpaper-0.7.3
+building '/nix/store/vqb0s92mbgbqkqdzgx1g7vpk3ldxa7g9-hm_hyprhyprpaper.conf.drv'...
+copying path '/nix/store/m682jh2hxa92qaay3bvb5ga4n9s48n1k-hyprpaper-0.7.3' from 'https://cache.nixos.org'...
+building '/nix/store/s24i3vdn8kfky03yw5bsg6012bbbmh4z-hyprpaper.service.drv'...
+building '/nix/store/39s1v6pv611ick19yjf4rznzmfpnwmr2-home-manager-files.drv'...
+building '/nix/store/zfyrz4bkjq0k3ji7v83ya5nfy925bf9l-home-manager-generation.drv'...
+building '/nix/store/92f9w5rn6h1n65gl465mmj0r9s5i9s8p-unit-home-manager-emi.service.drv'...
+building '/nix/store/lbcazzcss4m3fvqf9f5zasl8wawrlghx-system-units.drv'...
+building '/nix/store/a897bfqjl356xxf8hdgybgkn3qqdwm8c-etc.drv'...
+building '/nix/store/p6ild2731mpa970rl6m4dx5f7fsy8vsp-nixos-system-celeste-25.05.20250108.bffc22e.drv'...
+activating the configuration...
+setting up /etc...
+reloading user units for emi...
+restarting sysinit-reactivation.target
+the following new units were started: NetworkManager-dispatcher.service
