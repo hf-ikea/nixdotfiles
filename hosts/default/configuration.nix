@@ -99,6 +99,7 @@
   fonts.packages = with pkgs; [
     font-awesome
     jetbrains-mono
+    liberation_ttf
   ];
 
   # This value determines the NixOS release from which the default
