@@ -22,7 +22,6 @@ in {
 
   home.packages = [
     pkgs.alacritty
-    pkgs.firefox
     pkgs.vesktop
     pkgs.hyprshot
     pkgs.wl-clipboard
@@ -104,8 +103,13 @@ in {
   };
 
   programs.neovim = {
+    enable = true;
     viAlias = true;
     vimAlias = true;
+  };
+
+  programs.firefox = {
+    enable = true;
   };
 
   programs.vscode = {
