@@ -30,7 +30,6 @@ in {
     pkgs.btop
     pkgs.fastfetch
     pkgs.ark
-    pkgs.vscode
 
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
@@ -107,6 +106,13 @@ in {
   programs.neovim = {
     viAlias = true;
     vimAlias = true;
+  };
+
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      jnoortheen.nix-ide
+    ];
   };
 
   gtk = {
