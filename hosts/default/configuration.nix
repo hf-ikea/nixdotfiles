@@ -49,14 +49,7 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
-  programs.thunar.enable = true;
-
-  programs.dconf.profiles.user.databases = [{
-    lockAll = true;
-    settings."org/gnome/desktop/interface" = {
-      cursor-theme = "BreezeX-RoséPine";
-    };
-  }];
+  programs.thunar.enable = true; 
 
   # pipewire
   security.rtkit.enable = true;

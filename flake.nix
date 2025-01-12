@@ -10,11 +10,6 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
-
-    alejandra = {
-      url = "github:kamadorueda/alejandra/3.1.0";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
@@ -23,9 +18,14 @@
     hyprland,
     ...
   } @ inputs: let
+    lib = nixpkgs.lib.extend (_: _: import ./lib { lib = nixpkgs.lib; });
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
+    packages = import ./pkgs { inherit lib pkgs; };
+    formatter = pkgs.alejandra;
+    overlays = import ./overlays { inherit lib inputs; };
+
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [

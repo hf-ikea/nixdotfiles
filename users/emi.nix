@@ -109,4 +109,12 @@ in
     viAlias = true;
     vimAlias = true;
   };
+
+  gtk = {
+    enable = true;
+    cursorTheme = {
+      name = "BreezeX-RoséPine";
+      #package = pkgs.breezex-rosepine-cursor;
+    };
+  };
 }
