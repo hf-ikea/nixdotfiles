@@ -3,7 +3,11 @@
   pkgs,
   config,
   ...
-}: {
+}:
+let
+  wallpaper = "~/nixos/users/emipaper.png";
+in
+{
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "emi";
@@ -68,13 +72,13 @@
     enable = true;
     settings = {
       ipc = false;
-      splash = false;
+      #splash = false;
       preload = [
-        "./emipaper.png"
+        (builtins.toString wallpaper) 
       ];
 
       wallpaper = [
-        ",../users/emipaper.png"
+        ",${builtins.toString wallpaper}"
       ];
     };
   };
