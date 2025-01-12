@@ -38,13 +38,8 @@ in
     # '')
   ];
 
-  home.file."${config.xdg.dataHome}/icons/theme_posy_cursor" = {
-  source = ../miscdot/cursor/theme_posy_cursor;
-    recursive = true;
-  };
-
-  home.file."${config.xdg.dataHome}/icons/posy_cursor_x" = {
-    source = ../miscdot/cursor/posy_cursor_x;
+  home.file."${config.xdg.dataHome}/icons/" = {
+    source = ../miscdot/cursor;
     recursive = true;
   };
 
