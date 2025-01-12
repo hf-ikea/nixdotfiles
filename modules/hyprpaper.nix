@@ -9,7 +9,7 @@ in {
   services.hyprpaper = {
     enable = true;
     settings = {
-      ipc = "on";
+      ipc = "off";
       preload = [
         (builtins.toString wallpaper)
       ];
