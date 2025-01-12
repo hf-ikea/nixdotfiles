@@ -38,7 +38,7 @@ in
   ];
 
   home.file."${config.xdg.dataHome}/icons" = {
-    source = ../miscdot/theme_posy_cursor;
+    source = ../miscdot/cursor;
     recursive = true;
   };
 
