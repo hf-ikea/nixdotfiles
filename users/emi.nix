@@ -75,7 +75,7 @@ in
         ",${builtins.toString wallpaper}"
       ];
     };
-  };
+  }; 
 
   programs.wofi = {
     enable = true;

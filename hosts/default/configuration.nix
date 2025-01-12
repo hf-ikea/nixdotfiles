@@ -51,6 +51,13 @@
 
   programs.thunar.enable = true;
 
+  programs.dconf.profiles.user.databases = [{
+    lockAll = true;
+    settings."org/gnome/desktop/interface" = {
+      cursor-theme = "BreezeX-RoséPine";
+    };
+  }];
+
   # pipewire
   security.rtkit.enable = true;
   services.pipewire = {
