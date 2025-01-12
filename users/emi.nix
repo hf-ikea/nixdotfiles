@@ -96,7 +96,7 @@
     shellAliases = {
       ls = "ls -la";
     };
-    histSize = 10000;
+    history.save = 10000;
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];
