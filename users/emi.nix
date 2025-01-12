@@ -61,6 +61,11 @@
     settings = import ../modules/hyprland.nix;
   };
 
+  programs.waybar = {
+    enable = true;
+    settings = import ../modules/waybar.nix;
+  };
+
   programs.wofi = {
     enable = true;
   };

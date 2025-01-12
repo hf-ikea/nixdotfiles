@@ -1,6 +1,7 @@
 {
-	"layer" = "top";
-	"position" = "top";
+  mainbar = {
+	layer = "top";
+	position = "top";
 
 	"modules-left" = [
 		"hyprland/workspaces"
@@ -96,13 +97,13 @@
 		"interval" = 5;
 		"format" = "{icon} {temperatureC}°";
 		"format-icons" = [
-			"",
-			"",
-			"",
-			"",
+			""
+			""
+			""
+			""
 			""
 		];
-		"tooltip": false;
+		"tooltip" = false;
 	};
 
 	"tray" = {
@@ -148,4 +149,5 @@
 		"format" = "";
 		"tooltip" = false;
 	};
+  };
 }
