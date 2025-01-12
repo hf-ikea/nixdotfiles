@@ -21,15 +21,7 @@
     pkgs.alacritty
     pkgs.firefox
     pkgs.vesktop
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
@@ -93,6 +85,21 @@
     userEmail = "bluehairguyiscool@gmail.com";
     extraConfig = {
       push = { autoSetupRemote = true; };
+    };
+  };
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    shellAliases = {
+      ls = "ls -la";
+    };
+    histSize = 10000;
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" ];
     };
   };
 }
