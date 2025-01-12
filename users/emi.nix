@@ -38,10 +38,10 @@ in
     # '')
   ];
 
-  #home.file."${config.xdg.dataHome}/icons/theme_posy_cursor" = {
-  #source = ../miscdot/cursor/theme_posy_cursor;
-  #  recursive = true;
-  #};
+  home.file."${config.xdg.dataHome}/icons/theme_posy_cursor" = {
+  source = ../miscdot/cursor/theme_posy_cursor;
+    recursive = true;
+  };
 
   home.sessionVariables = {
     EDITOR = "nvim";
