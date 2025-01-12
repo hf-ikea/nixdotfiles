@@ -61,6 +61,10 @@
     settings = import ../modules/hyprland.nix;
   };
 
+  services.hyprpaper = {
+    enable = true;
+  };
+
   programs.waybar = {
     enable = true;
     style = builtins.readFile ../modules/waybar.css;
