@@ -32,17 +32,16 @@ in
     pkgs.htop
     pkgs.fastfetch
     pkgs.ark
-    pkgs.posy-cursors
 
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
 
-  home.file."${config.xdg.dataHome}/icons/theme_posy_cursor" = {
-    source = ../miscdot/cursor/theme_posy_cursor;
-    recursive = true;
-  };
+  #home.file."${config.xdg.dataHome}/icons/theme_posy_cursor" = {
+  #source = ../miscdot/cursor/theme_posy_cursor;
+  #  recursive = true;
+  #};
 
   home.sessionVariables = {
     EDITOR = "nvim";
