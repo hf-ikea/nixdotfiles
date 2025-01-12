@@ -1,5 +1,10 @@
 {
   "exec-once" = "waybar";
+  env = [
+    "HYPRCURSOR_THEME,Posys-Cursor-Scalable"
+    "HYPRCURSOR_SIZE,24"
+  ];
+
   general = {
     gaps_in = 5;
     gaps_out = 10;
