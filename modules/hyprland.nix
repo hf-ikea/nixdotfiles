@@ -4,7 +4,7 @@
   env = [
     "HYPRCURSOR_THEME,posy_cursor_wayland"
     "HYPRCURSOR_SIZE,24"
-    "XCURSOR_THEME,posy_cursor_x"
+    "XCURSOR_THEME,BreezeX-RoséPine"
     "XCURSOR_SIZE,24"
   ];
 
