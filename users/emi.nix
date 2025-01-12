@@ -29,7 +29,7 @@ in
     pkgs.hyprshot
     pkgs.wl-clipboard
     pkgs.prismlauncher
-    pkgs.htop
+    pkgs.btop
     pkgs.fastfetch
     pkgs.ark
 
