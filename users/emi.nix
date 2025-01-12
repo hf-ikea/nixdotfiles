@@ -45,6 +45,7 @@ in
   home.sessionVariables = {
     EDITOR = "nvim";
     TERMINAL = "alacritty";
+    XCURSOR_PATH = "${config.xdg.dataHome}/icons";
   };
 
   # Let Home Manager install and manage itself.
