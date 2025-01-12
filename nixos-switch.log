@@ -1,0 +1,19 @@
+warning: Git tree '/home/emi/nixos' is dirty
+error:
+       … while calling the 'seq' builtin
+         at /nix/store/v0g0bxsd5gw6k0jz2855f8h7l1218925-source/lib/modules.nix:334:18:
+          333|         options = checked options;
+          334|         config = checked (removeAttrs config [ "_module" ]);
+             |                  ^
+          335|         _module = checked (config._module);
+
+       … while evaluating a branch condition
+         at /nix/store/v0g0bxsd5gw6k0jz2855f8h7l1218925-source/lib/modules.nix:273:9:
+          272|       checkUnmatched =
+          273|         if config._module.check && config._module.freeformType == null && merged.unmatchedDefns != [] then
+             |         ^
+          274|           let
+
+       (stack trace truncated; use '--show-trace' to show the full, detailed trace)
+
+       error: path '/nix/store/czwy1ck355w870sz93qg1wb7hb6lpw8d-source/modules/hyprpaper.nix' does not exist
