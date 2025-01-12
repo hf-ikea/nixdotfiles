@@ -25,6 +25,7 @@
     pkgs.hyprshot
     pkgs.wl-clipboard
     pkgs.prismlauncher
+    pkgs.hyprpaper
 
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
