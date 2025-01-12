@@ -1,6 +1,6 @@
 {
-	"layer" = "top",
-	"position" = "top",
+	"layer" = "top";
+	"position" = "top";
 
 	"modules-left" = [
 		"hyprland/workspaces"
