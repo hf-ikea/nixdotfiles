@@ -49,7 +49,7 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
-  programs.thunar.enable = true; 
+  programs.thunar.enable = true;
 
   # pipewire
   security.rtkit.enable = true;

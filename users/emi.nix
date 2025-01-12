@@ -3,11 +3,9 @@
   pkgs,
   config,
   ...
-}:
-let
+}: let
   wallpaper = "~/nixos/users/emipaper.png";
-in
-{
+in {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "emi";
@@ -32,6 +30,7 @@ in
     pkgs.btop
     pkgs.fastfetch
     pkgs.ark
+    pkgs.vscode
 
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
@@ -68,14 +67,14 @@ in
       ipc = false;
       #splash = false;
       preload = [
-        (builtins.toString wallpaper) 
+        (builtins.toString wallpaper)
       ];
 
       wallpaper = [
         ",${builtins.toString wallpaper}"
       ];
     };
-  }; 
+  };
 
   programs.wofi = {
     enable = true;
@@ -114,7 +113,7 @@ in
     enable = true;
     cursorTheme = {
       name = "BreezeX-RoséPine";
-      #package = pkgs.breezex-rosepine-cursor;
+      package = pkgs.rose-pine-cursor;
     };
   };
 }

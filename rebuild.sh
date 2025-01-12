@@ -12,6 +12,8 @@ pushd ~/nixos/
 # Autoformat your nix files
 #alejandra . &>/dev/null || ( alejandra . ; echo "formatting failed!" && exit 1)
 
+nix fmt
+
 # Shows your changes
 git diff -U0 '*.nix'
 
