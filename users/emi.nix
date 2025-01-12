@@ -32,6 +32,8 @@ in
     pkgs.htop
     pkgs.fastfetch
     pkgs.ark
+    pkgs.posy-cursors
+
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
@@ -45,7 +47,6 @@ in
   home.sessionVariables = {
     EDITOR = "nvim";
     TERMINAL = "alacritty";
-    XCURSOR_PATH = "${config.xdg.dataHome}/icons";
   };
 
   # Let Home Manager install and manage itself.
@@ -108,5 +109,12 @@ in
   programs.neovim = {
     viAlias = true;
     vimAlias = true;
-  }; 
+  };
+
+  gtk = {
+    enable = true;
+    cursorTheme = {
+      name = "Posy's Cursor";
+    };
+  };
 }

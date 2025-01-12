@@ -4,6 +4,8 @@
   env = [
     "HYPRCURSOR_THEME,Posys-Cursor-Scalable"
     "HYPRCURSOR_SIZE,24"
+    "XCURSOR_THEME,Posy's Cursor"
+    "XCURSOR_SIZE,24"
   ];
 
   general = {
