@@ -119,6 +119,7 @@ in
     enable = true;
     cursorTheme = {
       name = "Posy's Cursor";
+      package = pkgs.posy-cursors;
     };
   };
 }
