@@ -44,6 +44,9 @@
     variant = "";
   };
 
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+
   # pipewire
   security.rtkit.enable = true;
   services.pipewire = {
