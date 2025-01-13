@@ -14,6 +14,7 @@
       modules = [
         ./celeste
         "${mod}/core"
+        "${mod}/programs/hyprland.nix"
         "${mod}/services"
         "${mod}/services/pipewire.nix"
         {
