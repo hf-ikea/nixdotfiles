@@ -1,7 +1,7 @@
 {lib, ...}: {
   imports = [
     ./users.nix
-    ../programs/zsh.nix
+    ./home-manager.nix
   ];
 
   # Configure keymap in X11

@@ -16,7 +16,8 @@ in {
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.default;
+    xwayland.enable = true;
+    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     systemd = {
       enable = false;
       variables = ["--all"];
@@ -26,5 +27,6 @@ in {
       ];
     };
   };
+
   systemd.user.targets.tray.Unit.Requires = lib.mkForce ["graphical-session.target"];
 }

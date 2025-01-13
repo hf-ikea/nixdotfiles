@@ -56,9 +56,6 @@
   environment.systemPackages = with pkgs; [
     ntfs3g
     xwaylandvideobridge
-    neovim
-    git
-    alejandra
   ];
 
   fonts.packages = with pkgs; [
