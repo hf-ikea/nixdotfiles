@@ -12,7 +12,7 @@ in {
     package = inputs.hyprpaper.packages.${pkgs.system}.default;
     settings = {
       preload = "${wallpaper_path}";
-      wallpaper = "${wallpaper_path}";
+      wallpaper = ",${wallpaper_path}";
     };
   };
 
