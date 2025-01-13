@@ -5,7 +5,7 @@
   config,
   ...
 }: let
-  wallpaper_path = "~/nixos/emipaper.png";
+  wallpaper_path = "/home/emi/nixos/emipaper.png";
 in {
   services.hyprpaper = {
     enable = true;
