@@ -15,6 +15,8 @@ in {
     env = [
       "HYPRCURSOR_THEME,${cursor}"
       "HYPRCURSOR_SIZE,${toString pointer.size}"
+      "XDG_CURRENT_DESKTOP,Hyprland"
+      "XDG_SESSION_DESKTOP,Hyprland"
     ];
 
     general = {
