@@ -17,17 +17,21 @@
     hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = inputs@{ nixpkgs, flake-parts, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [
-        "x86_64-linux"
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = ["x86_64-linux"];
+
+      imports = [
+        ./hosts
+        ./pkgs
       ];
 
-      perSystem = {pkgs, system, ...}: {
+      perSystem = {
+        config,
+        pkgs,
+        ...
+      }: {
         formatter = pkgs.alejandra;
-        imports = [
-          ./hosts
-        ];
       };
     };
 }

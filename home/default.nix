@@ -1,15 +1,19 @@
-{lib, self, inputs, ...}:
 {
+  lib,
+  self,
+  inputs,
+  ...
+}: {
   imports = [
     #
   ];
-  
+
   home = {
     username = "emi";
-    homeDirectory = "/home/emi";
+    homeDirectory = lib.mkForce "/home/emi";
     stateVersion = "24.11"; # do not change EVER
-    extraOutputs = [ ];
+    #extraOutputsToInstall = [];
   };
 
   programs.home-manager.enable = true;
-};
+}

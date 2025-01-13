@@ -1,9 +1,9 @@
 let
   celeste = [
+    ./core
     ./programs
-
     ./services
-    ./services/pipewire
+    ./services/pipewire.nix
   ];
 in {
   inherit celeste;

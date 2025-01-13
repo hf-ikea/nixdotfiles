@@ -1,5 +1,4 @@
-{lib, ...}:
-{
+{lib, ...}: {
   services.pipewire = {
     enable = true;
     alsa.enable = true;

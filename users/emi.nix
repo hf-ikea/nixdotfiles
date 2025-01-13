@@ -9,8 +9,6 @@ in {
   home.packages = [
     pkgs.alacritty
     pkgs.vesktop
-    pkgs.hyprshot
-    pkgs.wl-clipboard
     pkgs.prismlauncher
     pkgs.btop
     pkgs.fastfetch
@@ -29,11 +27,6 @@ in {
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  wayland.windowManager.hyprland = {
-    enable = true;
-    settings = import ../modules/hyprland.nix;
-  };
 
   programs.waybar = {
     enable = true;
