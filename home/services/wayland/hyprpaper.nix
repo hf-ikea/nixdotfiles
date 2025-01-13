@@ -11,8 +11,8 @@ in {
     enable = true;
     package = inputs.hyprpaper.packages.${pkgs.system}.default;
     settings = {
-      preload = wallpaper_path;
-      wallpaper = wallpaper_path;
+      preload = "${wallpaper_path}";
+      wallpaper = "${wallpaper_path}";
     };
   };
 
