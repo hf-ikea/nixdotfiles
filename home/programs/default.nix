@@ -5,5 +5,6 @@
 }: {
   imports = [
     ./gtk.nix
+    ./firefox.nix
   ];
 }

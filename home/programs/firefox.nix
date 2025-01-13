@@ -10,12 +10,9 @@
       id = 0;
       name = "default";
       isDefault = true;
-      extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
-        ublock-origin
-        bitwarden
-        darkreader
-        vimium
-      ];
+      # extensions = with pkgs.firefox-addons.packages.${pkgs.system}; [
+      #   ublock-origin
+      # ];
     };
   };
 }
