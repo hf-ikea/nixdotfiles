@@ -34,21 +34,6 @@ in {
     settings = import ../modules/waybar.nix;
   };
 
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      ipc = false;
-      #splash = false;
-      preload = [
-        (builtins.toString wallpaper)
-      ];
-
-      wallpaper = [
-        ",${builtins.toString wallpaper}"
-      ];
-    };
-  };
-
   programs.wofi = {
     enable = true;
   };
