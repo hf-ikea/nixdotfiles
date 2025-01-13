@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    #
+    ./terminal
   ];
 
   home = {

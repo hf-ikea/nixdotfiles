@@ -5,6 +5,8 @@
 }: {
   imports = [
     ./hyprland
+    ./wofi.nix
+    ./waybar
   ];
 
   home.packages = with pkgs; [

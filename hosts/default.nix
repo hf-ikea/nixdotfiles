@@ -16,6 +16,7 @@
         celeste
         ++ [
           ./celeste
+          "${mod}/programs/zsh.nix"
           "${mod}/programs/hyprland.nix"
           {
             home-manager = {
