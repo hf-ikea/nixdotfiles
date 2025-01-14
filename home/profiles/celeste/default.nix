@@ -17,13 +17,12 @@
     ../../editors/vscode
   ];
 
-  home.packages = [
-    pkgs.vesktop
-    pkgs.prismlauncher
-    pkgs.ark
-    pkgs.clang-tools
-    pkgs.cmake
-    pkgs.xwaylandvideobridge
-    #inputs.self.packages.${pkgs.system}.xwaylandvideobridge-fix
+  home.packages = with pkgs; [
+    vesktop
+    prismlauncher
+    ark
+    clang-tools
+    cmake
+    xwaylandvideobridge
   ];
 }

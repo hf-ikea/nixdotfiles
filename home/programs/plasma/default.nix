@@ -10,4 +10,8 @@
   programs.plasma = {
     enable = true;
   };
+
+  home.packages = with pkgs; [
+    plasma-browser-integration
+  ];
 }

@@ -19,9 +19,11 @@
         "${mod}/services"
         "${mod}/services/pipewire.nix"
         "${mod}/hardware/nvidia.nix"
+        "${mod}/game"
 
         #"${mod}/programs/hyprland.nix"
         "${mod}/programs/sddm.nix"
+        "${mod}/programs/plasma.nix"
         {
           home-manager = {
             users.emi.imports = homeImports."emi@celeste";
