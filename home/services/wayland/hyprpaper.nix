@@ -12,7 +12,7 @@ in {
     package = inputs.hyprpaper.packages.${pkgs.system}.default;
     settings = {
       ipc = false;
-      splash = true;
+      splash = false;
       preload = [
         (builtins.toString wallpaper)
       ];
