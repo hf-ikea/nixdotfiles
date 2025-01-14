@@ -1,50 +1,51 @@
 {
   lib,
+  pkgs,
   stdenv,
-  fetchurl,
+  fetchgit,
   cmake,
   extra-cmake-modules,
   pkg-config,
-  qtbase,
-  qtdeclarative,
-  qtx11extras ? null, # qt5 only
-  kcoreaddons,
-  ki18n,
-  knotifications,
-  kpipewire,
-  kstatusnotifieritem ? null, # qt6 only
-  kwindowsystem,
-  wrapQtAppsHook,
+  #qtbase,
+  #qtdeclarative,
+  #qtx11extras ? null, # qt5 only
+  #kcoreaddons,
+  #ki18n,
+  #knotifications,
+  #kpipewire,
+  #kstatusnotifieritem ? null, # qt6 only
+  #kwindowsystem,
+  #wrapQtAppsHook,
 }:
 stdenv.mkDerivation (finalAttrs: {
-  pname = "xwaylandvideobridge";
+  pname = "xwaylandvideobridge-fix";
   version = "0.4.0";
 
-  src = fetchurl {
+  src = fetchgit {
     url = "https://github.com/hf-ikea/xwaylandvideobridge-fix.git";
-    hash = "sha256-6nKseypnV46ZlNywYZYC6tMJekb7kzZmHaIA5jkn6+Y=";
+    hash = "sha256-enuO8tPnzRxQ07vdw28tmrtVWCkubTnP/It4XKEKpFI=";
   };
 
   nativeBuildInputs = [
     cmake
     extra-cmake-modules
     pkg-config
-    wrapQtAppsHook
+    pkgs.kdePackages.wrapQtAppsHook
   ];
 
   buildInputs = [
-    qtbase
-    qtdeclarative
-    qtx11extras
-    kcoreaddons
-    ki18n
-    knotifications
-    kpipewire
-    kstatusnotifieritem
-    kwindowsystem
+    pkgs.kdePackages.qtbase
+    pkgs.kdePackages.qtdeclarative
+    #pkgs.libsForQt5.qt5.qtx11extras
+    pkgs.kdePackages.kcoreaddons
+    pkgs.kdePackages.ki18n
+    pkgs.kdePackages.knotifications
+    pkgs.kdePackages.kpipewire
+    pkgs.kdePackages.kstatusnotifieritem
+    pkgs.kdePackages.kwindowsystem
   ];
 
-  cmakeFlags = ["-DQT_MAJOR_VERSION=${lib.versions.major qtbase.version}"];
+  cmakeFlags = ["-DQT_MAJOR_VERSION=${lib.versions.major pkgs.kdePackages.qtbase.version}"];
 
   meta = {
     description = "Utility to allow streaming Wayland windows to X applications";

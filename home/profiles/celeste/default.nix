@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     ../../programs
     ../../programs/wayland
@@ -11,10 +15,13 @@
     ../../editors/vscode
   ];
 
-  home.packages = with pkgs; [
-    vesktop
-    prismlauncher
-    ark
-    clang-tools
+  home.packages = [
+    pkgs.vesktop
+    pkgs.prismlauncher
+    pkgs.ark
+    pkgs.clang-tools
+    pkgs.cmake
+    pkgs.xwaylandvideobridge
+    #inputs.self.packages.${pkgs.system}.xwaylandvideobridge-fix
   ];
 }

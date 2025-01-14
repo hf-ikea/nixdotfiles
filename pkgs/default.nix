@@ -1,10 +1,14 @@
 {
   systems = ["x86_64-linux"];
 
-  perSystem = {pkgs, ...}: {
+  perSystem = {
+    inputs,
+    pkgs,
+    ...
+  }: {
     packages = {
       bibata-hyprcursor = pkgs.callPackage ./bibata-hyprcursor {};
-      xwaylandvideobridge-fix = pkgs.callPackage ./xwaylandvideobridge {};
+      #xwaylandvideobridge-fix = pkgs.callPackage ./xwaylandvideobridge-fix {};
     };
   };
 }
