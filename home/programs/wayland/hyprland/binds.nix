@@ -2,7 +2,7 @@
   wayland.windowManager.hyprland.settings = {
     "$mod" = "LALT";
     "$terminal" = "alacritty";
-    "$menu" = "wofi --show drun";
+    "$menu" = "uwsm app -- $(wofi --show drun --define=drun-print_desktop_file=true)";
     "$snip" = "hyprshot --clipboard-only -m region";
     bind = [
       "$mod, Q, killactive,"

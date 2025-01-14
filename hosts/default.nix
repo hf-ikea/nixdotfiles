@@ -14,6 +14,7 @@
       modules = [
         ./celeste
         "${mod}/core"
+        "${mod}/programs/uwsm.nix"
         "${mod}/programs/hyprland.nix"
         "${mod}/programs/zsh.nix"
         "${mod}/programs/thunar.nix"
