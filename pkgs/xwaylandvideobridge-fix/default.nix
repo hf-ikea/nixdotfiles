@@ -21,7 +21,7 @@ stdenv.mkDerivation (finalAttrs: {
   version = "0.4.0";
 
   src = fetchurl {
-    url = "mirror://kde/stable/xwaylandvideobridge/xwaylandvideobridge-${finalAttrs.version}.tar.xz";
+    url = "https://github.com/hf-ikea/xwaylandvideobridge-fix.git";
     hash = "sha256-6nKseypnV46ZlNywYZYC6tMJekb7kzZmHaIA5jkn6+Y=";
   };
 
