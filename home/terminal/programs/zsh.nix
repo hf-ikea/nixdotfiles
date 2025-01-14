@@ -13,9 +13,6 @@
       styles = {"alias" = "fg=magenta";};
       highlighters = ["pattern" "main" "brackets"];
     };
-    profileExtra = "if uwsm check may-start && uwsm select; then
-	    exec systemd-cat -t uwsm_start uwsm start default
-    fi";
     shellAliases = {
       ls = "ls --color=auto";
     };
