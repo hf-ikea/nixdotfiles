@@ -22,6 +22,13 @@
 
   xdg.portal = {
     enable = true;
+    config = {
+      common = {
+        default = [
+          "wayland"
+        ];
+      };
+    };
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
     ];
