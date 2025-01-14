@@ -3,6 +3,7 @@
     enable = true;
     extensions = with pkgs.vscode-extensions; [
       jnoortheen.nix-ide
+      llvm-vs-code-extensions.vscode-clangd
     ];
   };
 }

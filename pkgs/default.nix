@@ -4,6 +4,7 @@
   perSystem = {pkgs, ...}: {
     packages = {
       bibata-hyprcursor = pkgs.callPackage ./bibata-hyprcursor {};
+      xwaylandvideobridge-fix = pkgs.callPackage ./xwaylandvideobridge {};
     };
   };
 }

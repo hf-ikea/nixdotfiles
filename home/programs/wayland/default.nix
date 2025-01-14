@@ -10,7 +10,6 @@
   ];
 
   home.packages = with pkgs; [
-    xwaylandvideobridge
     wl-clipboard
   ];
 
