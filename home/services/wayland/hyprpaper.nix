@@ -22,6 +22,4 @@ in {
       ];
     };
   };
-
-  systemd.user.services.hyprpaper.Unit.WantedBy = lib.mkForce "graphical.target";
 }
