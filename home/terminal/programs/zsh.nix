@@ -13,9 +13,9 @@
       styles = {"alias" = "fg=magenta";};
       highlighters = ["pattern" "main" "brackets"];
     };
-    profileExtra = "if uwsm check may-start; then\n
-        exec uwsm start hyprland.desktop\n
-      fi";
+    profileExtra = "if uwsm check may-start && uwsm select; then\n
+	    exec systemd-cat -t uwsm_start uwsm start default\n
+    fi";
     shellAliases = {
       ls = "ls --color=auto";
     };
