@@ -5,9 +5,11 @@
 }: {
   imports = [
     ../../programs
-    ../../programs/wayland
 
-    ../../services/wayland/hyprpaper.nix
+    #../../programs/wayland
+    #../../services/wayland/hyprpaper.nix
+
+    ../../programs/plasma
 
     ../../terminal/emulators/alacritty.nix
 
