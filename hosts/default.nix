@@ -15,8 +15,11 @@
         ./celeste
         "${mod}/core"
         "${mod}/programs/hyprland.nix"
+        "${mod}/programs/zsh.nix"
+        "${mod}/programs/thunar.nix"
         "${mod}/services"
         "${mod}/services/pipewire.nix"
+        "${mod}/hardware/nvidia.nix"
         {
           home-manager = {
             users.emi.imports = homeImports."emi@celeste";
