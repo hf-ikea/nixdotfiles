@@ -11,9 +11,10 @@
     ../../editors/vscode
   ];
 
-  home.packages = [
-    pkgs.vesktop
-    pkgs.prismlauncher
-    pkgs.ark
+  home.packages = with pkgs; [
+    vesktop
+    prismlauncher
+    ark
+    clang-tools
   ];
 }
