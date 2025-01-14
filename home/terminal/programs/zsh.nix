@@ -13,6 +13,9 @@
       styles = {"alias" = "fg=magenta";};
       highlighters = ["pattern" "main" "brackets"];
     };
+    profileExtra = "if uwsm check may-start; then\n
+        exec uwsm start hyprland.desktop\n
+      fi";
     shellAliases = {
       ls = "ls --color=auto";
     };
