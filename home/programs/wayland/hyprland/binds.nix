@@ -3,7 +3,7 @@
     "$mod" = "LALT";
     "$terminal" = "alacritty";
     "$menu" = "uwsm app -- $(wofi --show drun --define=drun-print_desktop_file=true)";
-    "$snip" = "hyprshot --clipboard-only -m region";
+    "$snip" = "uwsm app --$(hyprshot --clipboard-only -m region)";
     "$exituwsm" = "loginctl terminate-session '$XDG_SESSION_ID'";
     bind = [
       "$mod, Q, killactive,"

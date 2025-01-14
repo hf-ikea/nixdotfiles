@@ -1,4 +1,5 @@
 {
+  pkgs,
   config,
   cursorName,
   ...
@@ -6,6 +7,10 @@
   pointer = config.home.pointerCursor;
   cursor = "Bibata-Modern-Classic-Hyprcursor"; # also defined in hyprland/default.nix
 in {
+  home.packages = with pkgs; [
+    hyprshot
+  ];
+
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "hyprctl setcursor ${cursor} ${toString pointer.size}"

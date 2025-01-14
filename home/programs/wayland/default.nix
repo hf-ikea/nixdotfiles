@@ -10,7 +10,7 @@
   ];
 
   home.packages = with pkgs; [
-    hyprshot
+    xwaylandvideobridge
     wl-clipboard
   ];
 

@@ -24,7 +24,6 @@
 
   environment.systemPackages = with pkgs; [
     ntfs3g
-    xwaylandvideobridge
   ];
 
   fonts.packages = with pkgs; [
