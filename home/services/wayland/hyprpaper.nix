@@ -12,7 +12,7 @@ in {
     package = inputs.hyprpaper.packages.${pkgs.system}.default;
     settings = {
       ipc = false;
-      #splash = false;
+      splash = true;
       preload = [
         (builtins.toString wallpaper)
       ];
@@ -23,5 +23,5 @@ in {
     };
   };
 
-  systemd.user.services.hyprpaper.Unit.After = lib.mkForce "graphical-session.target";
+  #systemd.user.services.hyprpaper.Unit.After = lib.mkForce "graphical-session.target";
 }
