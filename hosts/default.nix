@@ -15,13 +15,13 @@
         ./celeste
         "${mod}/core"
         "${mod}/programs/zsh.nix"
-        "${mod}/programs/thunar.nix"
         "${mod}/services"
         "${mod}/services/pipewire.nix"
         "${mod}/hardware/nvidia.nix"
         "${mod}/game"
 
         #"${mod}/programs/hyprland.nix"
+        #"${mod}/programs/thunar.nix"
         "${mod}/programs/sddm.nix"
         "${mod}/programs/plasma.nix"
         {

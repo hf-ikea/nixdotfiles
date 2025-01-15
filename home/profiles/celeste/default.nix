@@ -8,10 +8,9 @@
 
     #../../programs/wayland
     #../../services/wayland/hyprpaper.nix
+    #../../terminal/emulators/alacritty.nix
 
     ../../programs/plasma
-
-    ../../terminal/emulators/alacritty.nix
 
     ../../editors/neovim
     ../../editors/vscode
