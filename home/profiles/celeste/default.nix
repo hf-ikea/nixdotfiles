@@ -25,5 +25,7 @@
     clang-tools
     cmake
     xwaylandvideobridge
+    mpv
+    syncplay
   ];
 }
