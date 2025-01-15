@@ -12,6 +12,8 @@
 
     ../../programs/plasma
 
+    ../../programs/spicetify.nix
+
     ../../editors/neovim
     ../../editors/vscode
   ];
