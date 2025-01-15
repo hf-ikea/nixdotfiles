@@ -26,6 +26,10 @@ in {
       DisablePocket = true;
       SearchBar = "unified";
       Preferences = {
+        "browser.startup.page" = {
+          Value = 3;
+          Status = "locked";
+        }; # open previous tabs and windows
         # Privacy settings
         "extensions.pocket.enabled" = lock-false;
         "browser.newtabpage.pinned" = lock-empty-string;
@@ -33,7 +37,6 @@ in {
         "browser.newtabpage.activity-stream.showSponsored" = lock-false;
         "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
-        "browser.startup.page" = "3"; # open previous tabs and windows
       };
       ExtensionSettings = {
         "uBlock0@raymondhill.net" = {
