@@ -43,7 +43,7 @@ in {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/plasma-integration/latest.xpi";
           installation_mode = "force_installed";
         };
-        "	FirefoxColor@mozilla.com" = {
+        "FirefoxColor@mozilla.com" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/firefox-color/latest.xpi";
           installation_mode = "force_installed";
         };
