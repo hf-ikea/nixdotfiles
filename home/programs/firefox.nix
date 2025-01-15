@@ -33,6 +33,7 @@ in {
         "browser.newtabpage.activity-stream.showSponsored" = lock-false;
         "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
+        "browser.startup.page" = "3"; # open previous tabs and windows
       };
       ExtensionSettings = {
         "uBlock0@raymondhill.net" = {
