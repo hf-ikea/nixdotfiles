@@ -48,7 +48,7 @@ in {
           installation_mode = "force_installed";
         };
         "catppuccin-macchiato-mauve" = {
-          install_url = "catppuccin-macchiato-mauve";
+          install_url = "https://raw.githubusercontent.com/hf-ikea/nixdotfiles/refs/heads/main/theme.xpi";
           installation_mode = "force_installed";
         };
       };
