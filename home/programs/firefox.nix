@@ -47,8 +47,8 @@ in {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/firefox-color/latest.xpi";
           installation_mode = "force_installed";
         };
-        "catppuccin-macchiato-mauve" = {
-          install_url = "https://raw.githubusercontent.com/hf-ikea/nixdotfiles/refs/heads/main/theme.xpi";
+        "catppuccin-macchiato-mauve@hf-ikea.github.io" = {
+          install_url = "https://raw.githubusercontent.com/hf-ikea/nixdotfiles/refs/heads/main/catfirefox.xpi";
           installation_mode = "force_installed";
         };
       };
