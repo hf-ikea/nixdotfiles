@@ -10,7 +10,7 @@ git diff -U0 '*.nix'
 echo "NixOS Rebuilding..."
 
 # Rebuild, output simplified errors, log trackebacks
-sudo nixos-rebuild switch --flake ~/nixos#default
+sudo nixos-rebuild switch --upgrade --flake ~/nixos#default 
 
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)
