@@ -4,6 +4,7 @@
   config,
   ...
 }: {
+  #home.file."$HOME/.gtkrc-2.0".force = lib.mkForce true;
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";

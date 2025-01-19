@@ -28,6 +28,7 @@
           home-manager = {
             users.emi.imports = homeImports."emi@celeste";
             extraSpecialArgs = specialArgs;
+            backupFileExtension = "backup";
           };
         }
       ];
