@@ -27,5 +27,6 @@
     xwaylandvideobridge
     mpv
     syncplay
+    transmission_4-gtk
   ];
 }
