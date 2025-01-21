@@ -23,6 +23,10 @@
     };
   };
 
+  boot.blacklistedKernelModules = [
+    "dvb_usb_rtl28xxu"
+  ];
+
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   networking.hostName = "celeste"; # Define your hostname.
