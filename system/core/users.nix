@@ -5,6 +5,8 @@
     shell = pkgs.zsh;
     description = "emi";
     extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [];
+    packages = with pkgs; [
+      devenv
+    ];
   };
 }
