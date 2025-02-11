@@ -6,6 +6,7 @@
       llvm-vs-code-extensions.vscode-clangd
       wakatime.vscode-wakatime
       mshr-h.veriloghdl
+      leonardssh.vscord
     ];
   };
 }

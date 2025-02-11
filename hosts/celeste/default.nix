@@ -41,6 +41,10 @@
     };
   };
 
+  nix.extraOptions = ''
+    trusted-users = root emi
+  '';
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
