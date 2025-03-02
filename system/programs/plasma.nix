@@ -8,7 +8,7 @@
 
   systemd.user.services.set-wallpaper = {
     description = "Set KDE Plasma wallpaper";
-    serviceConfig.ExecStart = ["/run/current-system/sw/bin/plasma-apply-wallpaperimage ~/nixos/emipaper.jpg"];
+    serviceConfig.ExecStart = ["/run/current-system/sw/bin/plasma-apply-wallpaperimage /home/emi/nixos/emipaper.jpg"];
     wantedBy = ["graphical-session.target"];
   };
 }
