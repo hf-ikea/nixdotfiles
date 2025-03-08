@@ -10,8 +10,8 @@
   programs.plasma = {
     enable = true;
     workspace = {
+      iconTheme = "Papirus";
       colorScheme = "CatppuccinFrappeMauve";
-      lookAndFeel = "Catppuccin-Frappe-Mauve";
       wallpaper = "/home/users/emi/nixos/celeste.png";
       windowDecorations = {
         library = "org.kde.kwin.aurorae";
