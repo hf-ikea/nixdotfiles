@@ -7,6 +7,7 @@
       wakatime.vscode-wakatime
       mshr-h.veriloghdl
       leonardssh.vscord
+      rust-lang.rust-analyzer
     ];
   };
 }
