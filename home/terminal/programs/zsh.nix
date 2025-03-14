@@ -20,9 +20,5 @@
       expireDuplicatesFirst = true;
       save = 10000;
     };
-    oh-my-zsh = {
-      enable = true;
-      plugins = ["git"];
-    };
   };
 }
