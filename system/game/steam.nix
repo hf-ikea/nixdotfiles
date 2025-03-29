@@ -16,5 +16,9 @@
         # List library dependencies here
       ];
     })
+    bottles
+    (bottles.override {
+      removeWarningPopup = true;
+    })
   ];
 }
