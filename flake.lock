@@ -468,6 +468,21 @@
         "type": "github"
       }
     },
+    "olympus": {
+      "locked": {
+        "lastModified": 1735389739,
+        "narHash": "sha256-DKQCCfz+umLvN1GfOB6NcRRLwSpmPs8lbu8NzJV8LI8=",
+        "owner": "Petingoso",
+        "repo": "nixpkgs",
+        "rev": "e10a1750ee6eb15824d199cc22acb6a03f6173d6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Petingoso",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "plasma-manager": {
       "inputs": {
         "home-manager": [
@@ -521,6 +536,7 @@
         "hyprland": "hyprland",
         "hyprpaper": "hyprpaper",
         "nixpkgs": "nixpkgs_2",
+        "olympus": "olympus",
         "plasma-manager": "plasma-manager",
         "spicetify-nix": "spicetify-nix"
       }

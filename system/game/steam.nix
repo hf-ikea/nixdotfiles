@@ -20,5 +20,6 @@
     (bottles.override {
       removeWarningPopup = true;
     })
+    inputs.olympus
   ];
 }
