@@ -9,15 +9,15 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
-  environment.systemPackages = with pkgs; [
-    lutris
-    (lutris.override {
+  environment.systemPackages = [
+    pkgs.lutris
+    (pkgs.lutris.override {
       extraLibraries = pkgs: [
         # List library dependencies here
       ];
     })
-    bottles
-    (bottles.override {
+    pkgs.bottles
+    (pkgs.bottles.override {
       removeWarningPopup = true;
     })
     inputs.olympus
