@@ -8,6 +8,7 @@
   }: {
     packages = {
       bibata-hyprcursor = pkgs.callPackage ./bibata-hyprcursor {};
+      olympus = pkgs.callPackage ./olympus {}; # https://github.com/NixOS/nixpkgs/issues/162887
     };
   };
 }
