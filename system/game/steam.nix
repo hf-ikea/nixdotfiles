@@ -20,6 +20,5 @@
     (pkgs.bottles.override {
       removeWarningPopup = true;
     })
-    inputs.olympus
   ];
 }

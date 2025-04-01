@@ -36,8 +36,6 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    olympus.url = "github:Petingoso/nixpkgs";
   };
 
   outputs = inputs:
