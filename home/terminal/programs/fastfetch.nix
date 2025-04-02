@@ -1,5 +1,5 @@
 {
-  programs.fastfetch = {
+  programs.hyfetch = {
     enable = true;
   };
 }
