@@ -20,6 +20,10 @@
     };
   };
 
+  services.kdeconnect = {
+    enable = true;
+  };
+
   home.packages = with pkgs; [
     plasma-browser-integration
     papirus-icon-theme
