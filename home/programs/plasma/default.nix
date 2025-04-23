@@ -18,6 +18,9 @@
         theme = "kwin4_decoration_qml_plastik";
       };
     };
+    powerdevil = {
+      AC.displayBrightness = 10;
+    };
   };
 
   services.kdeconnect = {

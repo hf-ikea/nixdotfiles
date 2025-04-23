@@ -14,6 +14,15 @@
     enabledExtensions = with spicePkgs.extensions; [
       adblock
       shuffle # shuffle+ (special characters are sanitized out of extension names)
+      groupSession
+      powerBar
+      fullAlbumDate
+      skipStats
+      songStats
+      showQueueDuration
+      lastfm
+      betterGenres
+      volumePercentage
     ];
     theme = spicePkgs.themes.catppuccin;
     colorScheme = "mocha";
