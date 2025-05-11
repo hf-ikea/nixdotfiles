@@ -17,6 +17,7 @@
         "${mod}/programs/zsh.nix"
         "${mod}/services"
         "${mod}/services/pipewire.nix"
+        "${mod}/services/ipfs.nix"
         "${mod}/hardware/nvidia.nix"
         "${mod}/game"
 
