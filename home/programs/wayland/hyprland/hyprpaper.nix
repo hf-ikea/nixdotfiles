@@ -12,11 +12,11 @@
       ipc = false;
       splash = false;
       preload = [
-        (builtins.toString config.emi_wallpaper)
+        (builtins.toString config.wallpaper)
       ];
 
       wallpaper = [
-        ",${builtins.toString config.emi_wallpaper}"
+        ",${builtins.toString config.wallpaper}"
       ];
     };
   };

@@ -15,9 +15,9 @@
       pkgs.catppuccin-sddm.override {
         flavor = "mocha";
         font = "Noto Sans";
-        fontSize = "9";
+        fontSize = "10";
         loginBackground = true;
-        background = config.emi_wallpaper;
+        background = config.wallpaper;
       }
     )
   ];

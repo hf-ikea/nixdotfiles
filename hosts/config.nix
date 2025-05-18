@@ -3,14 +3,25 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+with lib; {
   options = {
-    emi_wallpaper = lib.mkOption {
-      type = lib.types.str;
+    wallpaper = mkOption {
+      type = types.str;
       default = "/home/emi/nixos/wallpaper.png";
+    };
+    desktop = mkOption {
+      type = types.str;
+      default = "kde";
     };
   };
   config = {
-    emi_wallpaper = "/home/emi/nixos/wallpaper.png";
+    wallpaper = "/home/emi/nixos/wallpaper.png";
   };
+  # https://github.com/chewblacka/nixos/blob/main/desktop.nix
+  # config = mkMerge [
+  #   (mkIf (config.desktop == "kde") {
+  #     #
+  #   })
+  # ]
 }

@@ -13,7 +13,7 @@
     workspace = {
       iconTheme = "Papirus";
       colorScheme = "CatppuccinFrappeMauve";
-      wallpaper = config.emi_wallpaper;
+      wallpaper = config.wallpaper;
       windowDecorations = {
         library = "org.kde.kwin.aurorae";
         theme = "kwin4_decoration_qml_plastik";
