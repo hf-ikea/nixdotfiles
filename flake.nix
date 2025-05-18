@@ -44,7 +44,7 @@
         inputs.nixos-unified.flakeModules.default
         #inputs.nixos-unified.flakeModules.autoWire
         ./pkgs
-        ./config.nix
+        ./config-module.nix
       ];
 
       systems = [ "x86_64-linux" ];

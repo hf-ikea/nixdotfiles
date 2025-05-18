@@ -1,7 +1,41 @@
 { lib
-, inputs
+, flake
+, pkgs
 , ...
-}: {
+}:
+let
+  inherit (flake.config) params;
+in
+{
+  networking.hostName = params.hostname;
+  # Enable networking
+  networking.networkmanager.enable = true;
+
+  users.users.${params.username} = {
+    isNormalUser = true;
+    shell = pkgs.zsh;
+    description = params.username;
+    extraGroups = [ "networkmanager" "wheel" params.username ];
+    packages = with pkgs; [
+      devenv
+    ];
+  };
+
+  nix = {
+    settings = {
+      trusted-users = [ "root" params.username ];
+      experimental-features = [ "nix-command" "flakes" ];
+    };
+  };
+
+  system.userActivationScripts = {
+    removeConflictingFiles = {
+      text = ''
+        rm -f /home/${params.username}/.gtkrc-2.0.backup
+      '';
+    };
+  };
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
