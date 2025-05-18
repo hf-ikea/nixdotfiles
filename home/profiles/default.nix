@@ -1,6 +1,7 @@
 {
   "emi@celeste" = [
     ../.
+    ../terminal
     ./celeste
   ];
 }

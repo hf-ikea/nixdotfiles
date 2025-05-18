@@ -10,6 +10,9 @@ in {
   imports = [
     ./binds.nix
     ./settings.nix
+    ./hyprpaper.nix
+    ../waybar
+    ../wofi.nix
   ];
 
   xdg.dataFile."icons/${cursor}".source = "${cursorPackage}/share/icons/${cursor}";

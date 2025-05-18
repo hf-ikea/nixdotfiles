@@ -4,7 +4,7 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "emi";
-    extraGroups = ["networkmanager" "wheel" "config.services.kubo.group"];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       devenv
     ];

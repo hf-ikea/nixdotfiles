@@ -23,11 +23,20 @@
     };
   };
 
+  nix = {
+    settings = {
+      trusted-users = ["root" "emi"];
+      experimental-features = ["nix-command" "flakes"];
+      auto-optimize-store = true;
+    };
+  };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   boot.blacklistedKernelModules = [
     "dvb_usb_rtl28xxu"
   ];
-
-  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   networking.hostName = "celeste"; # Define your hostname.
   # Enable networking
@@ -40,13 +49,6 @@
       '';
     };
   };
-
-  nix.extraOptions = ''
-    trusted-users = root emi
-  '';
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     ntfs3g

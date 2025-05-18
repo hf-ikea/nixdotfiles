@@ -4,10 +4,6 @@
   inputs,
   ...
 }: {
-  imports = [
-    ./terminal
-  ];
-
   home = {
     username = "emi";
     homeDirectory = lib.mkForce "/home/emi";

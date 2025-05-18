@@ -1,9 +1,14 @@
-{
+{pkgs, ...}: {
   imports = [
     ./git.nix
-    ./btop.nix
-    ./htop.nix
-    ./fastfetch.nix
+    ./fetch.nix
     ./zsh.nix
   ];
+
+  programs.btop = {
+    enable = true;
+  };
+  programs.htop = {
+    enable = true;
+  };
 }

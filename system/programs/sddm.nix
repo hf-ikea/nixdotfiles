@@ -3,6 +3,22 @@
   pkgs,
   ...
 }: {
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    theme = "catppuccin-mocha";
+    package = pkgs.kdePackages.sddm;
+  };
+
+  environment.systemPackages = [
+    (
+      pkgs.catppuccin-sddm.override {
+        flavor = "mocha";
+        font = "Noto Sans";
+        fontSize = "9";
+        background = "${/home/emi/nixos/wallpaper.png}";
+        loginBackground = true;
+      }
+    )
+  ];
 }

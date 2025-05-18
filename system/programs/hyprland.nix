@@ -30,4 +30,9 @@
 
   # hint Electron/Chromium to run on Wayland
   environment.variables.NIXOS_OZONE_WL = "1";
+
+  #enable thunar file manager
+  programs.thunar = {
+    enable = true;
+  };
 }

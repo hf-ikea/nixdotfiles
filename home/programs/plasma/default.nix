@@ -12,14 +12,11 @@
     workspace = {
       iconTheme = "Papirus";
       colorScheme = "CatppuccinFrappeMauve";
-      wallpaper = "/home/users/emi/nixos/celeste.png";
+      wallpaper = "/home/users/emi/nixos/wallpaper.png";
       windowDecorations = {
         library = "org.kde.kwin.aurorae";
         theme = "kwin4_decoration_qml_plastik";
       };
-    };
-    powerdevil = {
-      AC.displayBrightness = 10;
     };
   };
 
@@ -28,6 +25,7 @@
   };
 
   home.packages = with pkgs; [
+    catppuccin-kde
     plasma-browser-integration
     papirus-icon-theme
   ];
