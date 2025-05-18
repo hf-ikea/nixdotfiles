@@ -60,6 +60,7 @@
         let
           inherit (inputs.nixpkgs.lib) nixosSystem;
           mod = "${self}/system";
+          homemod = "${self}/home";
           homeImports = import "${self}/home/profiles";
         in
         {
@@ -79,8 +80,11 @@
                   imports =
                     [
                       self.homeModules.default
-                    ]
-                    ++ homeImports."emi@celeste";
+                      "${homemod}/terminal"
+                      "${homemod}/programs"
+                      "${homemod}/programs/spicetify.nix"
+                      "${homemod}/programs/plasma"
+                    ];
                   home = {
                     username = "emi";
                     homeDirectory = inputs.nixpkgs.lib.mkForce "/home/emi";
