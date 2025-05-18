@@ -23,9 +23,6 @@
     };
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   boot.blacklistedKernelModules = [
     "dvb_usb_rtl28xxu"
   ];

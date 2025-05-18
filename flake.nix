@@ -65,7 +65,10 @@
         in
         {
           nixosConfigurations."celeste" = self.nixos-unified.lib.mkLinuxSystem { home-manager = true; } {
-            nixpkgs.hostPlatform = "x86_64-linux";
+            nixpkgs = {
+              hostPlatform = "x86_64-linux";
+              config.allowUnfree = true;
+            };
             imports = [
               ./hosts/celeste
               "${mod}/core"
