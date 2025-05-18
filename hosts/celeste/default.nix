@@ -1,13 +1,24 @@
-{ self
-, config
+{ flake
 , pkgs
-, inputs
 , ...
-}: {
+}:
+let
+  inherit (flake.config) params;
+in
+{
   imports = [
     ./hardware-configuration.nix
-    ./users.nix
   ];
+
+  users.users.${params.username} = {
+    isNormalUser = true;
+    shell = pkgs.zsh;
+    description = "emi";
+    extraGroups = [ "networkmanager" "wheel" "emi" ];
+    packages = with pkgs; [
+      devenv
+    ];
+  };
 
   # Bootloader.
   boot.loader = {
