@@ -1,5 +1,5 @@
 {
-  description = "Nixos config flake";
+  description = "awesome nixos flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -36,8 +36,6 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs = inputs:
