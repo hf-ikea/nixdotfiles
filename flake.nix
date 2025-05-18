@@ -80,8 +80,6 @@
                   imports =
                     [
                       self.homeModules.default
-                      "${homemod}/terminal"
-                      "${homemod}/programs"
                       "${homemod}/programs/spicetify.nix"
                       "${homemod}/programs/plasma"
                     ];
@@ -111,7 +109,10 @@
             , pkgs
             , ...
             }: {
-              imports = [ ];
+              imports = [
+                "${homemod}/programs"
+                "${homemod}/terminal/programs"
+              ];
             };
         };
     };
