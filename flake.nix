@@ -81,6 +81,12 @@
                       self.homeModules.default
                     ]
                     ++ homeImports."emi@celeste";
+                  home = {
+                    username = "emi";
+                    homeDirectory = inputs.nixpkgs.lib.mkForce "/home/emi";
+                    stateVersion = "24.11"; # leave alone
+                    #extraOutputsToInstall = [];
+                  };
                 };
               }
             ];

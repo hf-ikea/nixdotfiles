@@ -9,10 +9,8 @@ in
 {
   home = {
     username = params.username;
-    homeDirectory = lib.mkForce "/home/${params.username}";
+    homeDirectoryA = lib.mkForce "/home/${params.username}";
     stateVersion = "24.11"; # do not change EVER
     #extraOutputsToInstall = [];
   };
-
-  #programs.home-manager.enable = true;
 }
