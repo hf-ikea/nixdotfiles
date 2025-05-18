@@ -10,11 +10,18 @@ in
     ./hardware-configuration.nix
   ];
 
+  params.hostname = "celeste";
+
+
+  networking.hostName = params.hostname;
+  # Enable networking
+  networking.networkmanager.enable = true;
+
   users.users.${params.username} = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    description = "emi";
-    extraGroups = [ "networkmanager" "wheel" "emi" ];
+    description = params.username;
+    extraGroups = [ "networkmanager" "wheel" params.username ];
     packages = with pkgs; [
       devenv
     ];
@@ -36,7 +43,7 @@ in
 
   nix = {
     settings = {
-      trusted-users = [ "root" "emi" ];
+      trusted-users = [ "root" params.username ];
       experimental-features = [ "nix-command" "flakes" ];
     };
   };
@@ -48,14 +55,10 @@ in
     "dvb_usb_rtl28xxu"
   ];
 
-  networking.hostName = "celeste"; # Define your hostname.
-  # Enable networking
-  networking.networkmanager.enable = true;
-
   system.userActivationScripts = {
     removeConflictingFiles = {
       text = ''
-        rm -f /home/emi/.gtkrc-2.0.backup
+        rm -f /home/${params.username}/.gtkrc-2.0.backup
       '';
     };
   };

@@ -13,6 +13,10 @@ with lib; {
             type = types.str;
             default = "emi";
           };
+          hostname = mkOption {
+            type = types.str;
+            default = "celeste";
+          };
           wallpaper = mkOption {
             type = types.str;
             default = "/home/emi/nixos/wallpaper.png";
