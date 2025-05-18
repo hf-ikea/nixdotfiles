@@ -1,15 +1,18 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
+{ config
+, pkgs
+, lib
+, ...
 }:
 with lib; {
   options = {
     params = mkOption {
-      default = {};
+      default = { };
       type = types.submodule {
         options = {
+          username = mkOption {
+            type = types.str;
+            default = "emi";
+          };
           wallpaper = mkOption {
             type = types.str;
             default = "/home/emi/nixos/wallpaper.png";

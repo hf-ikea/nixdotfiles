@@ -1,12 +1,13 @@
-{
-  pkgs,
-  config,
-  cursorName,
-  ...
-}: let
+{ pkgs
+, config
+, cursorName
+, ...
+}:
+let
   pointer = config.home.pointerCursor;
   cursor = "Bibata-Modern-Classic-Hyprcursor"; # also defined in hyprland/default.nix
-in {
+in
+{
   home.packages = with pkgs; [
     hyprshot
   ];

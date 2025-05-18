@@ -38,55 +38,61 @@
     };
   };
 
-  outputs = inputs @ {self, ...}:
-    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+  outputs = inputs @ { self, ... }:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         inputs.nixos-unified.flakeModules.default
+        #inputs.nixos-unified.flakeModules.autoWire
         ./pkgs
         ./config.nix
       ];
 
-      systems = ["x86_64-linux"];
-      perSystem = {
-        config,
-        pkgs,
-        ...
-      }: {
-        formatter = pkgs.alejandra;
-      };
-
-      flake = let
-        username = "emi";
-        inherit (inputs.nixpkgs.lib) nixosSystem;
-        mod = "${self}/system";
-        homeImports = import "${self}/home/profiles";
-      in {
-        nixosConfigurations."celeste" = self.nixos-unified.lib.mkLinuxSystem {home-manager = true;} {
-          nixpkgs.hostPlatform = "x86_64-linux";
-          imports = [
-            ./hosts/celeste
-            "${mod}/core"
-            "${mod}/programs/zsh.nix"
-            "${mod}/hardware/nvidia_desktop.nix"
-
-            "${mod}/programs/sddm.nix"
-            #"${mod}/programs/hyprland.nix"
-            "${mod}/programs/plasma.nix"
-            "${mod}/programs/game.nix"
-            {
-              home-manager.users.${username} = {
-                imports = [self.homeModules.default];
-              };
-            }
-          ];
-        };
-        homeModules.default = {
-          config,
-          pkgs,
-          ...
+      systems = [ "x86_64-linux" ];
+      perSystem =
+        { config
+        , pkgs
+        , ...
         }: {
-          imports = homeImports."emi@celeste";
+          formatter = pkgs.nixpkgs-fmt;
         };
-      };
+
+      flake =
+        let
+          inherit (inputs.nixpkgs.lib) nixosSystem;
+          mod = "${self}/system";
+          homeImports = import "${self}/home/profiles";
+        in
+        {
+          nixosConfigurations."celeste" = self.nixos-unified.lib.mkLinuxSystem { home-manager = true; } {
+            nixpkgs.hostPlatform = "x86_64-linux";
+            imports = [
+              ./hosts/celeste
+              "${mod}/core"
+              "${mod}/programs/zsh.nix"
+              "${mod}/hardware/nvidia_desktop.nix"
+
+              "${mod}/programs/sddm.nix"
+              #"${mod}/programs/hyprland.nix"
+              "${mod}/programs/plasma.nix"
+              "${mod}/programs/game.nix"
+              {
+                home-manager.users.emi = {
+                  imports =
+                    [
+                      self.homeModules.default
+                    ]
+                    ++ homeImports."emi@celeste";
+                };
+              }
+            ];
+          };
+          homeModules.default =
+            { config
+            , pkgs
+            , ...
+            }: {
+              imports = [ ];
+            };
+        };
     };
 }

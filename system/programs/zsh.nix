@@ -1,7 +1,6 @@
-{
-  inputs,
-  pkgs,
-  ...
+{ inputs
+, pkgs
+, ...
 }: {
   users.defaultUserShell = pkgs.zsh;
   programs.zsh = {

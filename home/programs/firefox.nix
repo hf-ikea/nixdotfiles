@@ -1,9 +1,9 @@
-{
-  inputs,
-  config,
-  pkgs,
-  ...
-}: let
+{ inputs
+, config
+, pkgs
+, ...
+}:
+let
   lock-false = {
     Value = false;
     Status = "locked";
@@ -16,7 +16,8 @@
     Value = "";
     Status = "locked";
   };
-in {
+in
+{
   programs.firefox = {
     enable = true;
     policies = {

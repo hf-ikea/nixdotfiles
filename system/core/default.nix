@@ -1,7 +1,6 @@
-{
-  lib,
-  inputs,
-  ...
+{ lib
+, inputs
+, ...
 }: {
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -53,7 +52,7 @@
     extraConfig.pipewire.adjust-sample-rate = {
       "context.properties" = {
         "default.clock.rate" = 192000;
-        "default.allowed-rates" = [192000 48000 44100];
+        "default.allowed-rates" = [ 192000 48000 44100 ];
         #"default.clock.quantum" = 32;
         #"default.clock.min-quantum" = 32;
         #"default.clock.max-quantum" = 32;

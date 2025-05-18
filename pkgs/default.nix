@@ -1,13 +1,13 @@
 {
-  systems = ["x86_64-linux"];
+  systems = [ "x86_64-linux" ];
 
-  perSystem = {
-    inputs,
-    pkgs,
-    ...
-  }: {
-    packages = {
-      bibata-hyprcursor = pkgs.callPackage ./bibata-hyprcursor {};
+  perSystem =
+    { inputs
+    , pkgs
+    , ...
+    }: {
+      packages = {
+        bibata-hyprcursor = pkgs.callPackage ./bibata-hyprcursor { };
+      };
     };
-  };
 }

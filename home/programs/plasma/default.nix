@@ -1,11 +1,12 @@
-{
-  flake,
-  config,
-  pkgs,
-  ...
-}: let
+{ flake
+, config
+, pkgs
+, ...
+}:
+let
   inherit (flake.config) params;
-in {
+in
+{
   imports = [
     flake.inputs.plasma-manager.homeManagerModules.plasma-manager
   ];

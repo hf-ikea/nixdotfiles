@@ -1,12 +1,13 @@
-{
-  lib,
-  inputs,
-  pkgs,
-  ...
-}: let
+{ lib
+, inputs
+, pkgs
+, ...
+}:
+let
   cursor = "Bibata-Modern-Classic-Hyprcursor"; # also defined in hyprland/settings.nix
   cursorPackage = inputs.self.packages.${pkgs.system}.bibata-hyprcursor;
-in {
+in
+{
   imports = [
     ./binds.nix
     ./settings.nix
@@ -22,7 +23,7 @@ in {
     xwayland.enable = true;
     systemd = {
       enable = false;
-      variables = ["--all"];
+      variables = [ "--all" ];
       extraCommands = [
         "systemctl --user stop graphical-session.target"
         "systemctl --user start hyprland-session.target"
@@ -30,5 +31,5 @@ in {
     };
   };
 
-  systemd.user.targets.tray.Unit.Requires = lib.mkForce ["graphical-session.target"];
+  systemd.user.targets.tray.Unit.Requires = lib.mkForce [ "graphical-session.target" ];
 }

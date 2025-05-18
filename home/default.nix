@@ -1,8 +1,7 @@
-{
-  lib,
-  self,
-  inputs,
-  ...
+{ lib
+, self
+, inputs
+, ...
 }: {
   home = {
     username = "emi";

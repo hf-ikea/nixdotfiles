@@ -1,11 +1,12 @@
-{
-  config,
-  flake,
-  pkgs,
-  ...
-}: let
+{ config
+, flake
+, pkgs
+, ...
+}:
+let
   inherit (flake.config) params;
-in {
+in
+{
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;

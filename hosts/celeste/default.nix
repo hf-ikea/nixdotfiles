@@ -1,9 +1,8 @@
-{
-  self,
-  config,
-  pkgs,
-  inputs,
-  ...
+{ self
+, config
+, pkgs
+, inputs
+, ...
 }: {
   imports = [
     ./hardware-configuration.nix
@@ -26,8 +25,8 @@
 
   nix = {
     settings = {
-      trusted-users = ["root" "emi"];
-      experimental-features = ["nix-command" "flakes"];
+      trusted-users = [ "root" "emi" ];
+      experimental-features = [ "nix-command" "flakes" ];
     };
   };
 

@@ -1,8 +1,7 @@
-{
-  lib,
-  pkgs,
-  config,
-  ...
+{ lib
+, pkgs
+, config
+, ...
 }: {
   #home.file."$HOME/.gtkrc-2.0".force = lib.mkForce true;
   home.pointerCursor = {
