@@ -6,7 +6,9 @@
   imports = [
     ./hardware-configuration.nix
     ./config.nix
+    ../../config-module.nix
   ];
+  params.hostname = "celeste";
 
   # Bootloader.
   boot.loader = {
