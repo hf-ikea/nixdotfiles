@@ -7,6 +7,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    ./users.nix
   ];
 
   # Bootloader.
@@ -27,7 +28,6 @@
     settings = {
       trusted-users = ["root" "emi"];
       experimental-features = ["nix-command" "flakes"];
-      auto-optimize-store = true;
     };
   };
 

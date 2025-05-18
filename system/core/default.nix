@@ -1,9 +1,8 @@
-{lib, ...}: {
-  imports = [
-    ./users.nix
-    ./home-manager.nix
-  ];
-
+{
+  lib,
+  inputs,
+  ...
+}: {
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";

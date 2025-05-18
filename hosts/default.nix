@@ -12,7 +12,9 @@
     default = nixosSystem {
       inherit specialArgs;
       modules = [
+        inputs.home-manager.nixosModules.default
         ./celeste
+        "${mod}/core"
         "${mod}/programs/zsh.nix"
         "${mod}/hardware/nvidia_desktop.nix"
 
@@ -25,6 +27,8 @@
             users.emi.imports = homeImports."emi@celeste";
             extraSpecialArgs = specialArgs;
             backupFileExtension = "backup";
+            useGlobalPkgs = true;
+            useUserPackages = true;
           };
         }
       ];
