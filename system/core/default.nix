@@ -36,6 +36,17 @@ in
     };
   };
 
+  fonts.packages = with pkgs; [
+    font-awesome
+    jetbrains-mono
+    liberation_ttf
+  ];
+
+  users.defaultUserShell = pkgs.zsh;
+  programs.zsh = {
+    enable = true;
+  };
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";

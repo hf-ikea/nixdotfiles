@@ -68,7 +68,6 @@
             imports = [
               ./hosts/celeste
               "${mod}/core"
-              "${mod}/programs/zsh.nix"
               "${mod}/hardware/nvidia_desktop.nix"
 
               "${mod}/programs/sddm.nix"
