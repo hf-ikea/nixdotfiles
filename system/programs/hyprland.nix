@@ -1,13 +1,13 @@
 { pkgs
-, inputs
+, flake
 , ...
 }: {
   # enable hyprland and required options
   programs.hyprland = {
     enable = true;
     withUWSM = true;
-    package = inputs.hyprland.packages.${pkgs.system}.default;
-    portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+    package = flake.inputs.hyprland.packages.${pkgs.system}.default;
+    portalPackage = flake.inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
 
   programs.uwsm.waylandCompositors = {
@@ -20,11 +20,11 @@
 
   # hyprland wiki, fix mesa package to be matched with hyprland
   hardware.graphics = {
-    package = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.system}.mesa.drivers;
+    package = flake.inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.system}.mesa.drivers;
 
     # if you also want 32-bit support (e.g for Steam)
     enable32Bit = true;
-    package32 = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.system}.pkgsi686Linux.mesa.drivers;
+    package32 = flake.inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.system}.pkgsi686Linux.mesa.drivers;
   };
 
   # hint Electron/Chromium to run on Wayland
