@@ -5,20 +5,19 @@
   imports = [
     ../../programs
     ../../programs/spicetify.nix
-
-    ./kde.nix
+    ../../programs/plasma
   ];
 
-  home.packages = with pkgs; [
-    vesktop
-    prismlauncher
-    ark
-    clang-tools
-    cmake
-    xwaylandvideobridge
-    mpv
-    syncplay
-    transmission_4-gtk
-    kicad
-  ];
+  # home.packages = with pkgs; [
+  #   vesktop
+  #   prismlauncher
+  #   ark
+  #   clang-tools
+  #   cmake
+  #   xwaylandvideobridge
+  #   mpv
+  #   syncplay
+  #   transmission_4-gtk
+  #   kicad
+  # ];
 }

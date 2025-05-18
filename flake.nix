@@ -75,7 +75,7 @@
               "${mod}/programs/plasma.nix"
               "${mod}/programs/game.nix"
               {
-                home-manager.users.emi = {
+                home-manager.users.emi = { pkgs, ... }: {
                   imports =
                     [
                       self.homeModules.default
@@ -85,7 +85,18 @@
                     username = "emi";
                     homeDirectory = inputs.nixpkgs.lib.mkForce "/home/emi";
                     stateVersion = "24.11"; # leave alone
-                    #extraOutputsToInstall = [];
+                    packages = with pkgs; [
+                      vesktop
+                      prismlauncher
+                      ark
+                      clang-tools
+                      cmake
+                      xwaylandvideobridge
+                      mpv
+                      syncplay
+                      transmission_4-gtk
+                      kicad
+                    ];
                   };
                 };
               }
