@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   pkgs,
   ...
@@ -8,7 +9,7 @@
 
   # systemd.user.services.set-plasma-wallpaper = {
   #   description = "Set KDE Plasma wallpaper";
-  #   serviceConfig.ExecStart = ["/run/current-system/sw/bin/plasma-apply-wallpaperimage /home/emi/nixos/wallpaper.png"];
+  #   serviceConfig.ExecStart = ["/run/current-system/sw/bin/plasma-apply-wallpaperimage ${config.emi_wallpaper}"];
   #   wantedBy = ["graphical.target"];
   # };
 }

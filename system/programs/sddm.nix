@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   pkgs,
   ...
@@ -15,8 +16,8 @@
         flavor = "mocha";
         font = "Noto Sans";
         fontSize = "9";
-        background = "/home/emi/nixos/wallpaper.png";
         loginBackground = true;
+        background = config.emi_wallpaper;
       }
     )
   ];

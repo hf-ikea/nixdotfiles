@@ -1,4 +1,5 @@
 {
+  config,
   self,
   inputs,
   ...
@@ -14,6 +15,7 @@
       modules = [
         inputs.home-manager.nixosModules.default
         ./celeste
+        ./config.nix
         "${mod}/core"
         "${mod}/programs/zsh.nix"
         "${mod}/hardware/nvidia_desktop.nix"
@@ -24,7 +26,7 @@
         "${mod}/programs/game.nix"
         {
           home-manager = {
-            users.emi.imports = homeImports."emi@celeste";
+            users.emi.imports = homeImports."emi@celeste" ++ [./config.nix];
             extraSpecialArgs = specialArgs;
             backupFileExtension = "backup";
             useGlobalPkgs = true;

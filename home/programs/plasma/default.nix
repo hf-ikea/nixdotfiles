@@ -1,5 +1,6 @@
 {
   inputs,
+  config,
   pkgs,
   ...
 }: {
@@ -12,7 +13,7 @@
     workspace = {
       iconTheme = "Papirus";
       colorScheme = "CatppuccinFrappeMauve";
-      wallpaper = "/home/users/emi/nixos/wallpaper.png";
+      wallpaper = config.emi_wallpaper;
       windowDecorations = {
         library = "org.kde.kwin.aurorae";
         theme = "kwin4_decoration_qml_plastik";

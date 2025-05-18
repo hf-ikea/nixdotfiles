@@ -4,9 +4,7 @@
   inputs,
   config,
   ...
-}: let
-  wallpaper = "~/nixos/wallpaper.png";
-in {
+}: {
   services.hyprpaper = {
     enable = true;
     package = inputs.hyprpaper.packages.${pkgs.system}.default;
@@ -14,11 +12,11 @@ in {
       ipc = false;
       splash = false;
       preload = [
-        (builtins.toString wallpaper)
+        (builtins.toString config.emi_wallpaper)
       ];
 
       wallpaper = [
-        ",${builtins.toString wallpaper}"
+        ",${builtins.toString config.emi_wallpaper}"
       ];
     };
   };
