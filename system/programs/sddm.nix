@@ -1,9 +1,11 @@
 {
   config,
-  inputs,
+  flake,
   pkgs,
   ...
-}: {
+}: let
+  inherit (flake.config) params;
+in {
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
@@ -17,7 +19,7 @@
         font = "Noto Sans";
         fontSize = "10";
         loginBackground = true;
-        background = config.wallpaper;
+        background = params.wallpaper;
       }
     )
   ];

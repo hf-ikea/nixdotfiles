@@ -436,6 +436,21 @@
         "type": "github"
       }
     },
+    "nixos-unified": {
+      "locked": {
+        "lastModified": 1745965553,
+        "narHash": "sha256-Dffk3pP0/ibGLtGn4yVYgFDeyE+Y29cVtFTU2JutSME=",
+        "owner": "srid",
+        "repo": "nixos-unified",
+        "rev": "66ed53ebd5580e07963f8f2fc6a6e7160af9f4d4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "srid",
+        "repo": "nixos-unified",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1736012469,
@@ -520,6 +535,7 @@
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "hyprpaper": "hyprpaper",
+        "nixos-unified": "nixos-unified",
         "nixpkgs": "nixpkgs_2",
         "plasma-manager": "plasma-manager",
         "spicetify-nix": "spicetify-nix"

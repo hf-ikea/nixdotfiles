@@ -1,11 +1,13 @@
 {
-  inputs,
+  flake,
   config,
   pkgs,
   ...
-}: {
+}: let
+  inherit (flake.config) params;
+in {
   imports = [
-    inputs.plasma-manager.homeManagerModules.plasma-manager
+    flake.inputs.plasma-manager.homeManagerModules.plasma-manager
   ];
 
   programs.plasma = {
@@ -13,7 +15,7 @@
     workspace = {
       iconTheme = "Papirus";
       colorScheme = "CatppuccinFrappeMauve";
-      wallpaper = config.wallpaper;
+      wallpaper = params.wallpaper;
       windowDecorations = {
         library = "org.kde.kwin.aurorae";
         theme = "kwin4_decoration_qml_plastik";
