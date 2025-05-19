@@ -9,6 +9,8 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
+    impermanence.url = "github:nix-community/impermanence";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -87,7 +89,7 @@
                       "${homemod}/programs/plasma"
                     ];
                   home = {
-                    username = "emi";
+                    #username = config.params.username;
                     homeDirectory = inputs.nixpkgs.lib.mkForce "/home/emi";
                     stateVersion = "24.11"; # leave alone
                     packages = with pkgs; [
@@ -105,6 +107,17 @@
                   };
                 };
               }
+            ];
+          };
+          nixosConfigurations."olympia" = self.nixos-unified.lib.mkLinuxSystem { home-manager = true; } {
+            nixpkgs = {
+              hostPlatform = "x86_64-linux";
+              config.allowUnfree = true;
+            };
+            imports = [
+              inputs.impermanence.nixosModules.impermanence
+              ./hosts/olympia
+              "${mod}/core"
             ];
           };
           homeModules.default =

@@ -7,8 +7,8 @@
     ./hardware-configuration.nix
     ../../config-module.nix
   ];
-  params.hostname = "celeste";
-  params.username = "emi";
+  params.hostname = "olympia";
+  params.username = "iris";
 
   # Bootloader.
   boot.loader = {
@@ -23,12 +23,4 @@
       efiSysMountPoint = "/boot";
     };
   };
-
-  boot.blacklistedKernelModules = [
-    "dvb_usb_rtl28xxu"
-  ];
-
-  environment.systemPackages = with pkgs; [
-    ntfs3g
-  ];
 }
