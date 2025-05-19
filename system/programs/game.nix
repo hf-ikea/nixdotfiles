@@ -19,7 +19,7 @@
     })
     pkgs.bottles
     (pkgs.bottles.override {
-      removeWarningPopup = true;
+      #removeWarningPopup = true; #broken, see issue https://github.com/NixOS/nixpkgs/pull/408450
     })
   ];
 }

@@ -6,6 +6,7 @@
     enable = true;
     vesktop.enable = true;
     vesktopConfig = {
+      frameless = false;
       themeLinks = [
         "https://catppuccin.github.io/discord/dist/catppuccin-mocha-mauve.theme.css"
       ];
@@ -113,8 +114,8 @@
           enable = true;
           replaceEvents = true;
           enableDiscordPresetQuotes = false;
-          additionalQuotes = ;
-            additionalQuotesDelimiter = "|";
+          additionalQuotes = "";
+          additionalQuotesDelimiter = "|";
           enablePluginPresetQuotes = true;
         };
         memberCount = {

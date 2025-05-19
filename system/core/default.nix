@@ -32,6 +32,8 @@ in
     removeConflictingFiles = {
       text = ''
         rm -f /home/${params.username}/.gtkrc-2.0.backup
+        rm -f /home/${params.username}/.config/vesktop/settings/settings.json
+        rm -f /home/${params.username}/.config/Code/User/settings.json
       '';
     };
   };

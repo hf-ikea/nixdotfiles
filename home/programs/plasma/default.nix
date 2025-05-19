@@ -30,7 +30,7 @@ in
 
   home.packages = with pkgs; [
     catppuccin-kde
-    plasma-browser-integration
+    kdePackages.plasma-browser-integration
     papirus-icon-theme
   ];
 }

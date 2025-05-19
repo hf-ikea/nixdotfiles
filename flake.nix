@@ -99,10 +99,10 @@
                     stateVersion = "24.11"; # leave alone
                     packages = with pkgs; [
                       prismlauncher
-                      ark
+                      kdePackages.ark
                       clang-tools
                       cmake
-                      xwaylandvideobridge
+                      kdePackages.xwaylandvideobridge
                       mpv
                       syncplay
                       transmission_4-gtk
