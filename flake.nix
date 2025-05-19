@@ -11,6 +11,8 @@
 
     impermanence.url = "github:nix-community/impermanence";
 
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,6 +40,8 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixcord.url = "github:kaylorben/nixcord";
   };
 
   outputs = inputs @ { self, ... }:
@@ -87,13 +91,13 @@
                       self.homeModules.default
                       "${homemod}/programs/spicetify.nix"
                       "${homemod}/programs/plasma"
+                      "${homemod}/programs/nixcord.nix"
                     ];
                   home = {
                     #username = config.params.username;
                     homeDirectory = inputs.nixpkgs.lib.mkForce "/home/emi";
                     stateVersion = "24.11"; # leave alone
                     packages = with pkgs; [
-                      vesktop
                       prismlauncher
                       ark
                       clang-tools
@@ -116,8 +120,12 @@
             };
             imports = [
               inputs.impermanence.nixosModules.impermanence
+              inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t480
               ./hosts/olympia
               "${mod}/core"
+              "${mod}/impermanence.nix"
+              "${mod}/programs/sddm.nix"
+              "${mod}/programs/plasma.nix"
             ];
           };
           homeModules.default =
