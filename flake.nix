@@ -94,6 +94,10 @@
               #"${mod}/programs/hyprland.nix"
               "${mod}/programs/plasma.nix"
               "${mod}/programs/game.nix"
+              # {
+              #   config.params.hostname = "celeste";
+              #   config.params.username = "emi";
+              # }
               {
                 home-manager.users.emi = { pkgs, ... }: {
                   imports =
@@ -101,13 +105,13 @@
                       self.homeModules.default
                       "${homemod}/programs/spicetify.nix"
                       "${homemod}/programs/plasma"
-                      "${homemod}/programs/nixcord.nix"
+                      #"${homemod}/programs/nixcord.nix"
                     ];
                   home = {
-                    #username = config.params.username;
                     homeDirectory = inputs.nixpkgs.lib.mkForce "/home/emi";
                     stateVersion = "24.11"; # leave alone
                     packages = with pkgs; [
+                      vesktop
                       prismlauncher
                       kdePackages.ark
                       clang-tools
@@ -133,7 +137,8 @@
               inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t480
               ./hosts/olympia
               "${mod}/core"
-              "${mod}/impermanence.nix"
+              "${mod}/core/sops.nix"
+              "${mod}/core/impermanence.nix"
               "${mod}/programs/sddm.nix"
               "${mod}/programs/plasma.nix"
               {
@@ -144,7 +149,6 @@
                     #"${homemod}/programs/nixcord.nix"
                   ];
                   home = {
-                    homeDirectory = inputs.nixpkgs.lib.mkForce "/home/iris";
                     stateVersion = "24.11";
                     packages = with pkgs; [
                       vesktop
