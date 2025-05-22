@@ -146,7 +146,6 @@
                   imports = [
                     self.homeModules.default
                     "${homemod}/programs/plasma"
-                    #"${homemod}/programs/nixcord.nix"
                   ];
                   home = {
                     stateVersion = "24.11";

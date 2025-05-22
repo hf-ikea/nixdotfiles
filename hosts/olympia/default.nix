@@ -15,7 +15,7 @@
     grub = {
       enable = true;
       efiSupport = true;
-      useOSProber = true;
+      useOSProber = false;
       device = "nodev";
     };
     efi = {

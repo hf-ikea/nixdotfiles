@@ -19,6 +19,7 @@
         "vscord.status.buttons.button1.git.idle.enabled" = false;
         "vscord.status.buttons.button1.git.inactive.enabled" = false;
         "git.enableSmartCommit" = true;
+        "git.autofetch" = true;
       };
     };
   };
