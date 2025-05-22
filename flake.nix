@@ -111,6 +111,7 @@
                     homeDirectory = inputs.nixpkgs.lib.mkForce "/home/emi";
                     stateVersion = "24.11"; # leave alone
                     packages = with pkgs; [
+                      inputs.self.packages.${pkgs.system}.ssh-keygen-ed25519-vanity
                       vesktop
                       prismlauncher
                       kdePackages.ark

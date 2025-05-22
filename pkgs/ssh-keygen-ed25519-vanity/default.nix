@@ -1,20 +1,17 @@
 {
-  stdenv, fetchFromGitHub, ...
+  stdenv, rustPlatform, fetchFromGitHub, lib, ...
 }:
-pkgs.rustPlatform.buildRustPackage (finalAttrs: {
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "ssh-keygen-ed25519-vanity";
-  version = "v0.0.1";
+  version = "v0.0.6";
   src = fetchFromGitHub {
     owner = "hf-ikea";
     repo = "ssh-keygen-ed25519-vanity";
     tag = finalAttrs.version;
-    hash = "";
+    hash = "sha256-lcdCUjg9AePa8QQQDfF2XXicws2f8nfpv/WvHcURwKA=";
   };
 
-  cargoLock = {
-    lockFile = ./Cargo.lock;
-    allowBuiltinFetchGit = true;
-  };
+  cargoHash = "sha256-nrbyrK+sH16b1pDKVL3Rk2QndKKRDYwmGSbxHYmZreM=";
 
   meta = {
     description = "ssh-keygen-ed25519-vanity nix derivation";
