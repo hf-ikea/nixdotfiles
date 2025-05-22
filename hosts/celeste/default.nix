@@ -1,5 +1,6 @@
 { flake
 , pkgs
+, lib
 , ...
 }:
 let
@@ -10,8 +11,9 @@ in
     ./hardware-configuration.nix
     ../../config-module.nix
   ];
-  params.hostname = "celeste";
-  params.username = "emi";
+  params.hostname = lib.mkForce "celeste";
+  params.username = lib.mkForce "emi";
+  params.wallpaper = "/home/emi/nixos/wallpaper.png";
 
   # Bootloader.
   boot.loader = {

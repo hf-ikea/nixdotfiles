@@ -7,22 +7,23 @@ let
   inherit (flake.config) params;
 in
 {
-  imports = [
-    ../sops.nix
-  ];
   networking.hostName = params.hostname;
   # Enable networking
   networking.networkmanager.enable = true;
 
   users.users.${params.username} = {
-    isNormalUser = true;
+    isNormalUser = lib.mkForce true;
+    isSystemUser = lib.mkForce false;
     shell = pkgs.zsh;
     description = params.username;
+    group = params.username;
     extraGroups = [ "networkmanager" "wheel" params.username ];
     packages = with pkgs; [
       devenv
     ];
   };
+
+  users.groups.${params.username} = {};
 
   home-manager.backupFileExtension = "backup";
 
