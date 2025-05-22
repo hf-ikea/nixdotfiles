@@ -2,6 +2,9 @@
 , pkgs
 , ...
 }:
+let
+  inherit (flake.config) params;
+in
 {
   imports = [
     ./hardware-configuration.nix
