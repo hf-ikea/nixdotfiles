@@ -18,7 +18,10 @@
         "vscord.status.buttons.button1.enabled" = false;
         "vscord.status.buttons.button1.git.idle.enabled" = false;
         "vscord.status.buttons.button1.git.inactive.enabled" = false;
+<<<<<<< HEAD
         "git.enableSmartCommit" = true;
+=======
+>>>>>>> 375d3bd723cfe3dad5f7e02ab3fcb367b92ae90a
       };
     };
   };

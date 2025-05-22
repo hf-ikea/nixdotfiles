@@ -12,7 +12,6 @@
     x11.enable = true;
   };
 
-
   gtk = {
     enable = true;
     font.name = "Noto Sans, 10";

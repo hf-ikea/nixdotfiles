@@ -7,9 +7,12 @@ let
   inherit (flake.config) params;
 in
 {
+<<<<<<< HEAD
   imports = [
     ../sops.nix
   ];
+=======
+>>>>>>> 375d3bd723cfe3dad5f7e02ab3fcb367b92ae90a
   networking.hostName = params.hostname;
   # Enable networking
   networking.networkmanager.enable = true;
@@ -24,8 +27,11 @@ in
     ];
   };
 
+<<<<<<< HEAD
   home-manager.backupFileExtension = "backup";
 
+=======
+>>>>>>> 375d3bd723cfe3dad5f7e02ab3fcb367b92ae90a
   nix = {
     settings = {
       trusted-users = [ "root" params.username ];
@@ -38,7 +44,11 @@ in
       text = ''
         rm -f /home/${params.username}/.gtkrc-2.0.backup
         rm -f /home/${params.username}/.config/vesktop/settings/settings.json
+<<<<<<< HEAD
         #rm -f /home/${params.username}/.config/Code/User/settings.json
+=======
+        rm -f /home/${params.username}/.config/Code/User/settings.json
+>>>>>>> 375d3bd723cfe3dad5f7e02ab3fcb367b92ae90a
       '';
     };
   };
@@ -49,8 +59,11 @@ in
     liberation_ttf
   ];
 
+<<<<<<< HEAD
   programs.dconf.enable = true;
 
+=======
+>>>>>>> 375d3bd723cfe3dad5f7e02ab3fcb367b92ae90a
   users.defaultUserShell = pkgs.zsh;
   programs.zsh = {
     enable = true;
