@@ -8,6 +8,7 @@
     userEmail = "forma3425@gmail.com";
     extraConfig = {
       push = { autoSetupRemote = true; };
+      pull = { rebase = false; };
       init = { defaultBranch = "main"; };
     };
   };
