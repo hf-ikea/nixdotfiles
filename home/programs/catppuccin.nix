@@ -1,4 +1,4 @@
-{flake, lib, pkgs, ...}: {
+{ flake, lib, pkgs, ... }: {
   catppuccin = {
     enable = true;
     flavor = "mocha";
@@ -8,8 +8,8 @@
         boldKeywords = true;
         italicComments = true;
         italicKeywords = true;
-        colorOverrides = {};
-        customUIColors = {};
+        colorOverrides = { };
+        customUIColors = { };
         workbenchMode = "default";
         bracketMode = "rainbow";
         extraBordersEnabled = false;

@@ -1,4 +1,4 @@
-{ flake, pkgs, ... }:
+{ flake, pkgs, config, ... }:
 let
   inherit (flake.config) params;
   secretspath = builtins.toString flake.inputs.nix-secrets;

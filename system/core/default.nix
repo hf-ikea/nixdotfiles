@@ -21,7 +21,7 @@ in
     packages = with pkgs; [
       devenv
     ];
-    
+
   };
 
   home-manager.users.${params.username} = {

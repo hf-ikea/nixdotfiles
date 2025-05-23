@@ -12,6 +12,7 @@ in
       "/etc/NetworkManager/system-connections"
       "/var/lib"
       "/etc/nixos"
+      "/home/${params.username}/.steam/"
     ];
   };
 

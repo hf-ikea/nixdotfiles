@@ -140,6 +140,7 @@
               "${mod}/core/impermanence.nix"
               "${mod}/programs/sddm.nix"
               "${mod}/programs/plasma.nix"
+              "${mod}/programs/game.nix"
               {
                 home-manager.users.iris = { pkgs, ... }: {
                   imports = [
@@ -151,6 +152,7 @@
                   home = {
                     packages = with pkgs; [
                       vesktop
+                      prismlauncher
                     ];
                   };
                 };
