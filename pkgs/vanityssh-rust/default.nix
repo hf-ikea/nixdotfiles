@@ -11,7 +11,8 @@ rustPlatform.buildRustPackage (finalAttrs: {
     hash = "sha256-V4OKLmdazwgPrBSb6/VXG3g4mKU5PIa3X2tfyiSgvfM=";
   };
 
-  cargoHash = "";
+  cargoHash = "sha256-fPQPYo60B5ENa6OcE1Y6JATr4v4UbNXZRSDr5GTZAi0=";
+  extraRustcOpts = "-C target-cpu=native -O";
 
   meta = {
     description = "vanityssh-rust nix pkg";
