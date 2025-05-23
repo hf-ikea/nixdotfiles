@@ -2,6 +2,7 @@
 let
   inherit (flake.config) params;
   secretspath = builtins.toString flake.inputs.nix-secrets;
+  agekeyfile = "/persist/sops/age/key.txt";
 in
 {
   imports = [
@@ -9,17 +10,29 @@ in
   ];
 
   sops = {
-    defaultSopsFile = "${secretspath}/secrets.yaml";
-    age.keyFile = "/persist/sops/age/key.txt";
+    defaultSopsFile = "${secretspath}/secrets.json";
+    age.keyFile = agekeyfile;
     secrets = {
       "${params.username}_passwd" = {
         neededForUsers = true;
       };
-      ssh_private = {
-        #
-      };
-      ssh_public = {
-        #
+    };
+  };
+
+  home-manager.users.${params.username} = {
+    sops = {
+      age.keyFile = agekeyfile;
+      defaultSopsFile = "${secretspath}/secrets.json";
+      secrets = {
+        age_identity = {
+          path = "/home/${params.username}/.config/sops/age/keys.txt";
+        };
+        ssh_private = {
+          path = "/home/${params.username}/.ssh/id_ed25519";
+        };
+        ssh_public = {
+          path = "/home/${params.username}/.ssh/id_ed25519.pub";
+        };
       };
     };
   };

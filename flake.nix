@@ -145,6 +145,7 @@
                 home-manager.users.iris = { pkgs, ... }: {
                   imports = [
                     self.homeModules.default
+                    inputs.sops-nix.homeManagerModules.sops
                     "${homemod}/programs/plasma"
                   ];
                   home = {

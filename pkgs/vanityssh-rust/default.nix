@@ -1,5 +1,8 @@
-{
-  stdenv, rustPlatform, fetchFromGitHub, lib, ...
+{ stdenv
+, rustPlatform
+, fetchFromGitHub
+, lib
+, ...
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "vanityssh-rust";

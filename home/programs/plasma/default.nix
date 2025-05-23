@@ -24,6 +24,17 @@ in
     };
   };
 
+  programs.konsole = {
+    enable = true;
+    defaultProfile = "default";
+    profiles.default = {
+      font = {
+        name = "Noto Sans";
+        size = 10;
+      };
+    };
+  };
+
   services.kdeconnect = {
     enable = true;
   };
