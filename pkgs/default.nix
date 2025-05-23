@@ -7,6 +7,7 @@
     }: {
       packages = {
         bibata-hyprcursor = pkgs.callPackage ./bibata-hyprcursor { };
+        vanityssh-rust = pkgs.callPackage ./vanityssh-rust { };
         ssh-keygen-ed25519-vanity = pkgs.callPackage ./ssh-keygen-ed25519-vanity { };
       };
     };
