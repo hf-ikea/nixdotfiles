@@ -29,8 +29,8 @@ in
     defaultProfile = "default";
     profiles.default = {
       font = {
-        name = "Noto Sans";
-        size = 10;
+        name = "JetBrains Mono";
+        size = 12;
       };
     };
   };

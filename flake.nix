@@ -147,6 +147,7 @@
                     self.homeModules.default
                     inputs.sops-nix.homeManagerModules.sops
                     "${homemod}/programs/plasma"
+                    #"${homemod}/programs/nixcord.nix"
                   ];
                   home = {
                     stateVersion = "24.11";
