@@ -5,9 +5,6 @@ in
 {
   security.sudo.extraConfig = "Defaults lecture=never";
   users.mutableUsers = false;
-  users.users.${params.username} = {
-    hashedPasswordFile = config.sops.secrets."${params.username}_passwd".path;
-  };
 
   environment.persistence."/persist" = {
     enable = true;
@@ -22,12 +19,6 @@ in
     knownHosts = {
       "github.com".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl";
     };
-    hostKeys = [
-      {
-        type = "ed25519";
-        path = "/persist/.ssh/id_ed25519";
-      }
-    ];
   };
 
   boot.initrd = {

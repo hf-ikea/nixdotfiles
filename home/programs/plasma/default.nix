@@ -30,7 +30,7 @@ in
     profiles.default = {
       font = {
         name = "JetBrains Mono";
-        size = 12;
+        size = 11;
       };
     };
   };

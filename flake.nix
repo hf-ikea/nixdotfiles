@@ -52,6 +52,8 @@
     };
 
     nixcord.url = "github:kaylorben/nixcord";
+
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs = inputs @ { self, ... }:
@@ -109,7 +111,6 @@
                     ];
                   home = {
                     homeDirectory = inputs.nixpkgs.lib.mkForce "/home/emi";
-                    stateVersion = "24.11"; # leave alone
                     packages = with pkgs; [
                       vesktop
                       prismlauncher
@@ -167,6 +168,7 @@
               imports = [
                 "${homemod}/programs"
                 "${homemod}/terminal/programs"
+                inputs.catppuccin.homeModules.catppuccin
               ];
             };
         };

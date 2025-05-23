@@ -2,7 +2,7 @@
 let
   inherit (flake.config) params;
   secretspath = builtins.toString flake.inputs.nix-secrets;
-  agekeyfile = "/persist/sops/age/key.txt";
+  agekeyfile = "/persist/sops/age/key.txt"; # required!  !! !
 in
 {
   imports = [
@@ -35,6 +35,10 @@ in
         };
       };
     };
+  };
+
+  users.users.${params.username} = {
+    hashedPasswordFile = config.sops.secrets."${params.username}_passwd".path;
   };
 
   services.pcscd.enable = true;

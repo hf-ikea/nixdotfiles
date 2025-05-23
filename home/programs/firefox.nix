@@ -24,8 +24,32 @@ in
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
       DontCheckDefaultBrowser = true;
+      DisableProfileImport = true;
       DisablePocket = true;
       SearchBar = "unified";
+      FirefoxSuggest = {
+        WebSuggestions = true;
+        SponsoredSuggestions = false;
+        ImproveSuggest = false; # telemetry
+        Locked = true;
+      };
+      FirefoxHome = {
+        Search = true;
+        TopSites = true;
+        SponsoredTopSites = false;
+        Highlights = false;
+        Pocket = false;
+        SponsoredPocket = false;
+        Snippets = false;
+        Weather = false;
+        Locked = true;
+      };
+      Homepage = {
+        URL = "about:home";
+        StartPage = "previous-session";
+        Locked = true;
+      };
+      InstallAddonsPermission.Default = false;
       Preferences = {
         "browser.startup.page" = {
           Value = 3;
@@ -38,11 +62,14 @@ in
         "browser.newtabpage.activity-stream.showSponsored" = lock-false;
         "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
+        "browser.newtabpage.activity-stream.showWeather" = lock-false;
+        "browser.newtabpage.activity-stream.feeds.section.topstories" = lock-false;
       };
       ExtensionSettings = {
         "uBlock0@raymondhill.net" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
           installation_mode = "force_installed";
+          private_browsing = true;
         };
         "plasma-browser-integration@kde.org" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/plasma-integration/latest.xpi";
