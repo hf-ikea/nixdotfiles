@@ -491,10 +491,10 @@
     "nix-secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1747968836,
-        "narHash": "sha256-41dxsREAiCPC1IbounD6vszEFNHAvRM0Rcs9qVyvFvc=",
+        "lastModified": 1747969272,
+        "narHash": "sha256-Ohby4gezPXl+CeAkpDi1CSkGU4tlxcWZedvexp5DpPg=",
         "ref": "main",
-        "rev": "3bafccc4ccc20a865094cf8c22f27c4347ee564f",
+        "rev": "b26216196f4f9e8dda6458fef80559c328c9321e",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/hf-ikea/nixsecrets"
