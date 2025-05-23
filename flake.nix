@@ -114,10 +114,8 @@
                     packages = with pkgs; [
                       vesktop
                       prismlauncher
-                      kdePackages.ark
                       clang-tools
                       cmake
-                      kdePackages.xwaylandvideobridge
                       mpv
                       syncplay
                       transmission_4-gtk
@@ -151,7 +149,6 @@
                     #"${homemod}/programs/nixcord.nix"
                   ];
                   home = {
-                    stateVersion = "24.11";
                     packages = with pkgs; [
                       vesktop
                     ];

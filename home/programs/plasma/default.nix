@@ -43,5 +43,7 @@ in
     catppuccin-kde
     kdePackages.plasma-browser-integration
     papirus-icon-theme
+    kdePackages.ark
+    kdePackages.xwaylandvideobridge
   ];
 }

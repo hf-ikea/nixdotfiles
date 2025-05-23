@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   programs.vscode = {
     enable = true;
+    mutableExtensionsDir = true;
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
@@ -9,6 +10,8 @@
         mshr-h.veriloghdl
         leonardssh.vscord
         rust-lang.rust-analyzer
+        #catppuccin.catppuccin-vsc
+        #catppuccin.catppuccin-vsc-icons
       ];
       userSettings = {
         "editor.fontSize" = 14;
@@ -20,6 +23,10 @@
         "vscord.status.buttons.button1.git.inactive.enabled" = false;
         "git.enableSmartCommit" = true;
         "git.autofetch" = true;
+
+        "editor.semanticHighlighting.enabled" = true;
+        "terminal.integrated.minimumContrastRatio" = 1;
+        "window.titleBarStyle" = "custom";
       };
     };
   };

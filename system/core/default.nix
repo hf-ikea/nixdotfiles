@@ -21,6 +21,10 @@ in
     packages = with pkgs; [
       devenv
     ];
+    
+  };
+
+  home-manager.users.${params.username} = {
     home = {
       stateVersion = "24.11";
       homeDirectory = lib.mkForce "/home/${params.username}";

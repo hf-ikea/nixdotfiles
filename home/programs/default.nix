@@ -7,5 +7,6 @@
     ./firefox.nix
     ./neovim.nix
     ./vscode.nix
+    ./catppuccin.nix
   ];
 }
