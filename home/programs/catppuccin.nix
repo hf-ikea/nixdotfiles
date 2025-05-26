@@ -15,5 +15,9 @@
         extraBordersEnabled = false;
       };
     };
+    foot = {
+      enable = true;
+      flavor = "mocha";
+    };
   };
 }

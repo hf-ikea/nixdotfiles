@@ -1,5 +1,6 @@
 { flake
 , lib
+, osConfig
 , ...
 }:
 let
@@ -23,6 +24,12 @@ in
     history = {
       expireDuplicatesFirst = true;
       save = 10000;
+    };
+  };
+  osConfig = {
+    users.defaultUserShell = pkgs.zsh;
+    programs.zsh = {
+      enable = true;
     };
   };
 }

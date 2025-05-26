@@ -2,7 +2,7 @@
   imports = [
     ./git.nix
     ./fetch.nix
-    ./zsh.nix
+    ./fish.nix
   ];
 
   programs.btop = {

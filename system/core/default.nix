@@ -33,6 +33,7 @@ in
   users.groups.${params.username} = { };
 
   home-manager.backupFileExtension = "backup";
+  home-manager.useGlobalPkgs = true;
 
   nix = {
     settings = {
@@ -58,11 +59,6 @@ in
   ];
 
   programs.dconf.enable = true;
-
-  users.defaultUserShell = pkgs.zsh;
-  programs.zsh = {
-    enable = true;
-  };
 
   # Configure keymap in X11
   services.xserver.xkb = {

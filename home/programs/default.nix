@@ -4,7 +4,7 @@
 }: {
   imports = [
     ./gtk.nix
-    ./firefox.nix
+    ./librewolf.nix
     ./neovim.nix
     ./vscode.nix
     ./catppuccin.nix
