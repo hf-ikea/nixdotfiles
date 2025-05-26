@@ -18,7 +18,6 @@ in
     };
     shellAliases = {
       ls = "ls --color=auto";
-      list-tmpfs = "sudo fd --one-file-system --base-directory / --type f --hidden --exclude \"{tmp,etc/passwd}\"";
       nrebuild = "sudo nixos-rebuild switch --flake /etc/nixos#${params.hostname}";
     };
     history = {

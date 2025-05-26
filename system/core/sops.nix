@@ -33,6 +33,9 @@ in
         ssh_public = {
           path = "/home/${params.username}/.ssh/id_ed25519.pub";
         };
+        wakatime_cfg = {
+          path = "/home/${params.username}/.wakatime.cfg";
+        };
       };
     };
   };

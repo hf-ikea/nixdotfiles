@@ -11,9 +11,18 @@ in
     directories = [
       "/etc/NetworkManager/system-connections"
       "/var/lib"
-      "/etc/nixos"
-      "/home/${params.username}/.steam/"
+      { directory = "/etc/nixos"; user = params.username; group = params.username; }
     ];
+    users.${params.username} = {
+      directories = [
+        "Documents"
+        ".steam"
+      ];
+      files = [
+        { file = ".zsh_history"; parentDirectory = { user = params.username; group = params.username; }; }
+        { file = ".config/dolphinrc"; parentDirectory = { user = params.username; group = params.username; }; }
+      ];
+    };
   };
 
   services.openssh = {

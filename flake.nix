@@ -54,6 +54,10 @@
     nixcord.url = "github:kaylorben/nixcord";
 
     catppuccin.url = "github:catppuccin/nix";
+    nixos-06cb-009a-fingerprint-sensor = {
+      url = "github:ahbnr/nixos-06cb-009a-fingerprint-sensor?ref=24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ { self, ... }:
@@ -107,12 +111,11 @@
                       self.homeModules.default
                       "${homemod}/programs/spicetify.nix"
                       "${homemod}/programs/plasma"
-                      #"${homemod}/programs/nixcord.nix"
+                      "${homemod}/programs/nixcord.nix"
                     ];
                   home = {
                     homeDirectory = inputs.nixpkgs.lib.mkForce "/home/emi";
                     packages = with pkgs; [
-                      vesktop
                       prismlauncher
                       clang-tools
                       cmake
@@ -141,17 +144,17 @@
               "${mod}/programs/sddm.nix"
               "${mod}/programs/plasma.nix"
               "${mod}/programs/game.nix"
+              inputs.nixos-06cb-009a-fingerprint-sensor.nixosModules."06cb-009a-fingerprint-sensor"
               {
                 home-manager.users.iris = { pkgs, ... }: {
                   imports = [
                     self.homeModules.default
                     inputs.sops-nix.homeManagerModules.sops
                     "${homemod}/programs/plasma"
-                    #"${homemod}/programs/nixcord.nix"
+                    "${homemod}/programs/nixcord.nix"
                   ];
                   home = {
                     packages = with pkgs; [
-                      vesktop
                       prismlauncher
                     ];
                   };
