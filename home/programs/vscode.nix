@@ -27,6 +27,8 @@
         "editor.semanticHighlighting.enabled" = true;
         "terminal.integrated.minimumContrastRatio" = 1;
         "window.titleBarStyle" = "custom";
+
+        "terminal.integrated.fontFamily" = "MesloLGS NF";
       };
     };
   };

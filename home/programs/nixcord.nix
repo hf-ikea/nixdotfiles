@@ -4,6 +4,8 @@
   ];
   programs.nixcord = {
     enable = true;
+    discord.enable = false;
+    discord.vencord.enable = false;
     vesktop.enable = true;
     vesktopConfig = {
       frameless = false;
