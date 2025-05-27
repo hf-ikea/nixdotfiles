@@ -576,10 +576,10 @@
     "nix-secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1748028618,
-        "narHash": "sha256-1QAEv23JoZCxDFd4B/a+9quv9CHVa3pijvyi/PzMoD4=",
+        "lastModified": 1748329432,
+        "narHash": "sha256-vNcN9rDpRXeHfl3zFBmtP1HFTP3eVJYXtAbBNtWG+Fg=",
         "ref": "main",
-        "rev": "585a7cd8e9790446c3f337caaf49056ee9c2cab3",
+        "rev": "bd2329fb34373e36d8b2d9d5d4dbdc7e0bfe37be",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/hf-ikea/nixsecrets"
@@ -609,6 +609,27 @@
       "original": {
         "owner": "kaylorben",
         "repo": "nixcord",
+        "type": "github"
+      }
+    },
+    "nixos-06cb-009a-fingerprint-sensor": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1734692513,
+        "narHash": "sha256-3QEzFFrkXLj/JgZGoLaxq/pPkflSXfBOP10bXL8/Niw=",
+        "owner": "ahbnr",
+        "repo": "nixos-06cb-009a-fingerprint-sensor",
+        "rev": "3678b193efa1e06aab86058aecee18ddaa8878d2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ahbnr",
+        "ref": "24.11",
+        "repo": "nixos-06cb-009a-fingerprint-sensor",
         "type": "github"
       }
     },
@@ -809,6 +830,7 @@
         "impermanence": "impermanence",
         "nix-secrets": "nix-secrets",
         "nixcord": "nixcord",
+        "nixos-06cb-009a-fingerprint-sensor": "nixos-06cb-009a-fingerprint-sensor",
         "nixos-hardware": "nixos-hardware",
         "nixos-unified": "nixos-unified",
         "nixpkgs": "nixpkgs_4",

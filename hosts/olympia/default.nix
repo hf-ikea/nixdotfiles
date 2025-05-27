@@ -2,6 +2,9 @@
 , pkgs
 , ...
 }:
+let
+  secretspath = builtins.toString flake.inputs.nix-secrets;  
+in
 {
   imports = [
     ./hardware-configuration.nix
@@ -26,7 +29,7 @@
 
   services."06cb-009a-fingerprint-sensor" = {
     enable = true;
-    #backend = "libfprint-tod";                                                
-    #calib-data-file = ./calib-data.bin;                
+    backend = "libfprint-tod";                                                
+    calib-data-file = "${secretspath}/calib-data.bin";                
   };
 }
