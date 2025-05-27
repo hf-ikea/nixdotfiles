@@ -54,8 +54,14 @@
     nixcord.url = "github:kaylorben/nixcord";
 
     catppuccin.url = "github:catppuccin/nix";
-    nixos-06cb-009a-fingerprint-sensor = {
-      url = "github:ahbnr/nixos-06cb-009a-fingerprint-sensor?ref=24.11";
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    t480-fingerprint-nixos = {
+      url = "github:viktor-grunwaldt/t480-fingerprint-nixos";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -100,10 +106,6 @@
               #"${mod}/programs/hyprland.nix"
               "${mod}/programs/plasma.nix"
               "${mod}/programs/game.nix"
-              # {
-              #   config.params.hostname = "celeste";
-              #   config.params.username = "emi";
-              # }
               {
                 home-manager.users.emi = { pkgs, ... }: {
                   imports =
@@ -148,7 +150,7 @@
               "${mod}/programs/sddm.nix"
               "${mod}/programs/plasma.nix"
               "${mod}/programs/game.nix"
-              inputs.nixos-06cb-009a-fingerprint-sensor.nixosModules."06cb-009a-fingerprint-sensor"
+              inputs.t480-fingerprint-nixos.nixosModules."06cb-009a-fingerprint-sensor"
               {
                 home-manager.users.iris = { pkgs, ... }: {
                   imports = [
