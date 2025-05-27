@@ -86,10 +86,8 @@
 
       flake =
         let
-          inherit (inputs.nixpkgs.lib) nixosSystem;
           mod = "${self}/system";
           homemod = "${self}/home";
-          homeImports = import "${self}/home/profiles";
         in
         {
           nixosConfigurations."celeste" = self.nixos-unified.lib.mkLinuxSystem { home-manager = true; } {
@@ -102,35 +100,18 @@
               "${mod}/core"
               "${mod}/hardware/nvidia_desktop.nix"
 
+              "${mod}/programs/catppuccin.nix"
               "${mod}/programs/sddm.nix"
-              #"${mod}/programs/hyprland.nix"
               "${mod}/programs/plasma.nix"
               "${mod}/programs/game.nix"
               {
                 home-manager.users.emi = { pkgs, ... }: {
-                  imports =
-                    [
-                      self.homeModules.default
-                      "${homemod}/programs/spicetify.nix"
-                      "${homemod}/programs/plasma"
-                      "${homemod}/programs/nixcord.nix"
-                    ];
-                  home = {
-                    homeDirectory = inputs.nixpkgs.lib.mkForce "/home/emi";
-                    packages = with pkgs; [
-                      prismlauncher
-                      clang-tools
-                      cmake
-                      mpv
-                      syncplay
-                      transmission_4-gtk
-                      kicad
-
-                      firefox # remove later
-
-                      fortune
-                    ];
-                  };
+                  imports = [
+                    self.homeModules.default
+                    "${homemod}/programs/spicetify.nix"
+                    "${homemod}/programs/plasma"
+                    "${homemod}/programs/nixcord.nix"
+                  ];
                 };
               }
             ];
@@ -147,6 +128,8 @@
               "${mod}/core"
               "${mod}/core/sops.nix"
               "${mod}/core/impermanence.nix"
+
+              "${mod}/programs/catppuccin.nix"
               "${mod}/programs/sddm.nix"
               "${mod}/programs/plasma.nix"
               "${mod}/programs/game.nix"
@@ -159,12 +142,6 @@
                     "${homemod}/programs/plasma"
                     "${homemod}/programs/nixcord.nix"
                   ];
-                  home = {
-                    packages = with pkgs; [
-		      python3
-                      prismlauncher
-                    ];
-                  };
                 };
               }
             ];

@@ -3,7 +3,7 @@
 , ...
 }:
 let
-  secretspath = builtins.toString flake.inputs.nix-secrets;  
+  secretspath = builtins.toString flake.inputs.nix-secrets;
 in
 {
   imports = [
@@ -29,7 +29,7 @@ in
 
   services."06cb-009a-fingerprint-sensor" = {
     enable = true;
-    backend = "libfprint-tod";                                                
-    calib-data-file = "${secretspath}/calib-data.bin";                
+    backend = "libfprint-tod";
+    calib-data-file = "${secretspath}/calib-data.bin";
   };
 }

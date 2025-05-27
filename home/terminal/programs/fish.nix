@@ -12,7 +12,7 @@
       nrebuild = "sudo nixos-rebuild switch --flake /etc/nixos#${osConfig.networking.hostName} --show-trace";
     };
     shellAbbrs = {
-      #
+      nfmt = "nix fmt -- **/*.nix";
     };
     plugins = [
       { name = "z"; src = pkgs.fishPlugins.z.src; }

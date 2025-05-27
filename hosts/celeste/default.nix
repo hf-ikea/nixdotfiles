@@ -12,9 +12,24 @@ in
     ../../config-module.nix
   ];
   params.username = lib.mkForce "emi";
-  params.wallpaper = "/home/emi/nixos/wallpaper.png";
 
   networking.hostName = "celeste";
+
+  home-manager.users.${params.username}.home = {
+    packages = with pkgs; [
+      prismlauncher
+      clang-tools
+      cmake
+      mpv
+      syncplay
+      transmission_4-gtk
+      kicad
+
+      firefox # remove later
+
+      fortune
+    ];
+  };
 
   # Bootloader.
   boot.loader = {

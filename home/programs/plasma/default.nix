@@ -22,10 +22,18 @@ in
         theme = "kwin4_decoration_qml_plastik";
       };
     };
+    dataFile."dolphin/view_properties/global/.directory".Settings.HiddenFilesShown = true;
+    configFile."mimeapps.list" = {
+      "Default Applications" = {
+        "x-scheme-handler/discord" = "vesktop.desktop";
+        "x-scheme-handler/http" = "librewolf.desktop";
+        "x-scheme-handler/https" = "librewolf.desktop";
+      };
+    };
   };
 
   programs.konsole = {
-    enable = true;
+    enable = false;
     defaultProfile = "default";
     profiles.default = {
       font = {

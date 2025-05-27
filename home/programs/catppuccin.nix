@@ -2,6 +2,7 @@
   catppuccin = {
     enable = true;
     flavor = "mocha";
+    accent = "mauve";
     vscode = {
       accent = "mauve";
       settings = {
@@ -15,9 +16,9 @@
         extraBordersEnabled = false;
       };
     };
-    foot = {
-      enable = true;
-      flavor = "mocha";
-    };
+    # foot = {
+    #   enable = true;
+    #   flavor = "mocha";
+    # };
   };
 }
