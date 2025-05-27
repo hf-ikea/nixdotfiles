@@ -7,7 +7,7 @@
     ./hardware-configuration.nix
     ../../config-module.nix
   ];
-  params.hostname = "olympia";
+  networking.hostName = "olympia";
   params.username = "iris";
 
   # Bootloader.

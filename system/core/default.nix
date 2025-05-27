@@ -1,20 +1,40 @@
 { lib
 , flake
 , pkgs
+, config
 , ...
 }:
 let
   inherit (flake.config) params;
 in
 {
-  networking.hostName = params.hostname;
   # Enable networking
   networking.networkmanager.enable = true;
+
+  # fish!!
+  users.defaultUserShell = pkgs.bash;
+  # fish cant be login shell :((
+  programs.bash = {
+    interactiveShellInit = ''
+      if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+      then
+        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+      fi
+    '';
+  };
+  programs.foot = {
+    enableFishIntegration = true;
+  };
+
+  # users.defaultUserShell = pkgs.zsh;
+  # programs.zsh = {
+  #   enable = true;
+  # };
 
   users.users.${params.username} = {
     isNormalUser = lib.mkForce true;
     isSystemUser = lib.mkForce false;
-    shell = pkgs.zsh;
     description = params.username;
     group = params.username;
     extraGroups = [ "networkmanager" "wheel" params.username ];
@@ -56,6 +76,7 @@ in
     font-awesome
     jetbrains-mono
     liberation_ttf
+    meslo-lgs-nf
   ];
 
   programs.dconf.enable = true;

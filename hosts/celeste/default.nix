@@ -11,9 +11,10 @@ in
     ./hardware-configuration.nix
     ../../config-module.nix
   ];
-  params.hostname = lib.mkForce "celeste";
   params.username = lib.mkForce "emi";
   params.wallpaper = "/home/emi/nixos/wallpaper.png";
+
+  networking.hostName = "celeste";
 
   # Bootloader.
   boot.loader = {

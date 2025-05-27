@@ -50,7 +50,7 @@ in
         StartPage = "previous-session";
         Locked = true;
       };
-      InstallAddonsPermission.Default = false;
+      InstallAddonsPermission.Default = true;
       Preferences = {
         "browser.startup.page" = {
           Value = 3;
@@ -65,6 +65,7 @@ in
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
         "browser.newtabpage.activity-stream.showWeather" = lock-false;
         "browser.newtabpage.activity-stream.feeds.section.topstories" = lock-false;
+        "widget.use-xdg-desktop-portal.file-picker" = 1;
       };
       ExtensionSettings = {
         "uBlock0@raymondhill.net" = {
@@ -76,14 +77,19 @@ in
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/plasma-integration/latest.xpi";
           installation_mode = "force_installed";
         };
-        "FirefoxColor@mozilla.com" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/firefox-color/latest.xpi";
-          installation_mode = "force_installed";
-        };
+        # "FirefoxColor@mozilla.com" = {
+        #   install_url = "https://addons.mozilla.org/firefox/downloads/latest/firefox-color/latest.xpi";
+        #   installation_mode = "force_installed";
+        # };
         "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}" = {
           #stylus
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/styl-us/latest.xpi";
           installation_mode = "force_installed";
+        };
+        "catppuccin@federicoscodelaro.com" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/catppuccin-selector/latest.xpi";
+          installation_mode = "force_installed";
+          private_browsing = true;
         };
       };
     };

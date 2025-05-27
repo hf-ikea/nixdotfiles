@@ -123,6 +123,10 @@
                       syncplay
                       transmission_4-gtk
                       kicad
+
+                      firefox # remove later
+
+                      fortune
                     ];
                   };
                 };
@@ -170,6 +174,7 @@
               imports = [
                 "${homemod}/programs"
                 "${homemod}/terminal/programs"
+                "${homemod}/terminal/emulators/foot.nix"
                 inputs.catppuccin.homeModules.catppuccin
               ];
             };
