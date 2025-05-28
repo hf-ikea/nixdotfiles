@@ -70,15 +70,13 @@
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         inputs.nixos-unified.flakeModules.default
-        #inputs.nixos-unified.flakeModules.autoWire
         ./pkgs
         ./config-module.nix
       ];
 
       systems = [ "x86_64-linux" ];
       perSystem =
-        { config
-        , pkgs
+        { pkgs
         , ...
         }: {
           formatter = pkgs.nixpkgs-fmt;
@@ -105,7 +103,7 @@
               "${mod}/programs/plasma.nix"
               "${mod}/programs/game.nix"
               {
-                home-manager.users.emi = { pkgs, ... }: {
+                home-manager.users.emi = {
                   imports = [
                     self.homeModules.default
                     "${homemod}/programs/spicetify.nix"
@@ -135,7 +133,7 @@
               "${mod}/programs/game.nix"
               inputs.t480-fingerprint-nixos.nixosModules."06cb-009a-fingerprint-sensor"
               {
-                home-manager.users.iris = { pkgs, ... }: {
+                home-manager.users.iris = {
                   imports = [
                     self.homeModules.default
                     inputs.sops-nix.homeManagerModules.sops
@@ -146,18 +144,14 @@
               }
             ];
           };
-          homeModules.default =
-            { config
-            , pkgs
-            , ...
-            }: {
-              imports = [
-                "${homemod}/programs"
-                "${homemod}/terminal/programs"
-                "${homemod}/terminal/emulators/foot.nix"
-                inputs.catppuccin.homeModules.catppuccin
-              ];
-            };
+          homeModules.default = {
+            imports = [
+              "${homemod}/programs"
+              "${homemod}/terminal/programs"
+              "${homemod}/terminal/emulators/foot.nix"
+              inputs.catppuccin.homeModules.catppuccin
+            ];
+          };
         };
     };
 }

@@ -29,6 +29,9 @@
         "window.titleBarStyle" = "custom";
 
         "terminal.integrated.fontFamily" = "MesloLGS NF";
+        "nix.enableLanguageServer" = true;
+        "nix.formatterPath" = "nix fmt";
+        "nix.serverPath" = "nixd";
       };
     };
   };

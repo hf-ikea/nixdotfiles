@@ -8,6 +8,9 @@ let
   inherit (flake.config) params;
 in
 {
+  environment.systemPackages = with pkgs; [
+    nixd
+  ];
   # Enable networking
   networking.networkmanager.enable = true;
 
