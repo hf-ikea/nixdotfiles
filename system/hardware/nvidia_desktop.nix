@@ -1,6 +1,4 @@
-{ inputs
-, pkgs
-, config
+{ config
 , ...
 }: {
   hardware.graphics = {

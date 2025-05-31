@@ -32,6 +32,8 @@
         "nix.enableLanguageServer" = true;
         "nix.formatterPath" = "nix fmt";
         "nix.serverPath" = "nixd";
+
+        "editor.formatOnSave" = true;
       };
     };
   };

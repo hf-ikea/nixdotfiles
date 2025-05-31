@@ -1,5 +1,4 @@
 { flake
-, config
 , pkgs
 , ...
 }:
@@ -53,5 +52,6 @@ in
     papirus-icon-theme
     kdePackages.ark
     kdePackages.xwaylandvideobridge
+    kdePackages.qtmultimedia
   ];
 }

@@ -1,6 +1,4 @@
-{ inputs
-, config
-, pkgs
+{ pkgs
 , ...
 }:
 let

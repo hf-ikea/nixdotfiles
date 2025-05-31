@@ -22,4 +22,8 @@
       { name = "wakatime-fish"; src = pkgs.fishPlugins.wakatime-fish.src; }
     ];
   };
+
+  home.packages = with pkgs; [
+    fzf
+  ];
 }
