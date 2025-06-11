@@ -10,11 +10,10 @@
         mshr-h.veriloghdl
         leonardssh.vscord
         rust-lang.rust-analyzer
-        #catppuccin.catppuccin-vsc
-        #catppuccin.catppuccin-vsc-icons
+        
       ];
       userSettings = {
-        "editor.fontSize" = 14;
+        "editor.fontSize" = 16;
         "editor.fontFamily" = "'JetBrains Mono', 'monospace', monospace";
         "files.autoSave" = "afterDelay";
         "git.confirmSync" = false;
@@ -30,7 +29,7 @@
 
         "terminal.integrated.fontFamily" = "MesloLGS NF";
         "nix.enableLanguageServer" = true;
-        "nix.formatterPath" = "nix fmt";
+        "nix.formatterPath" = "nixfmt";
         "nix.serverPath" = "nixd";
 
         "editor.formatOnSave" = true;
