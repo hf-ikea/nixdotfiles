@@ -136,7 +136,7 @@
                 home-manager.users.iris = {
                   imports = [
                     self.homeModules.default
-               mp     inputs.sops-nix.homeManagerModules.sops
+                    inputs.sops-nix.homeManagerModules.sops
                     "${homemod}/programs/plasma"
                     "${homemod}/programs/nixcord.nix"
                   ];

@@ -9,11 +9,11 @@ with lib; {
         options = {
           username = mkOption {
             type = types.str;
-            default = "emi";
+            default = "iris";
           };
           hostname = mkOption {
             type = types.str;
-            default = "celeste";
+            default = "olympia";
           };
           wallpaper = mkOption {
             type = types.str;

@@ -1,8 +1,10 @@
 { flake
+, pkgs
 , ...
 }:
 let
   secretspath = builtins.toString flake.inputs.nix-secrets;
+  inherit (flake.config) params;
 in
 {
   imports = [
@@ -11,6 +13,13 @@ in
   ];
   networking.hostName = "olympia";
   params.username = "iris";
+
+   home-manager.users.${params.username}.home = {
+    packages = with pkgs; [
+      mpv
+      syncplay
+    ];
+  };
 
   # Bootloader.
   boot.loader = {
