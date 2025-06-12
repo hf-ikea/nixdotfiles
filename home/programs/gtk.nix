@@ -1,6 +1,4 @@
-{ lib
-, pkgs
-, config
+{ pkgs
 , ...
 }: {
   #home.file."$HOME/.gtkrc-2.0".force = lib.mkForce true;

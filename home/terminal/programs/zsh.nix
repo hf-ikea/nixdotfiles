@@ -1,8 +1,3 @@
-{ flake
-, lib
-, osConfig
-, ...
-}:
 {
   programs.zsh = {
     enable = true;

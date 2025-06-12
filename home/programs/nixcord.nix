@@ -13,7 +13,7 @@
         "https://catppuccin.github.io/discord/dist/catppuccin-mocha-mauve.theme.css"
       ];
       plugins = {
-        alwaysExpandRoles.enable = true;
+        alwaysExpandRoles.enable = false;
         anonymiseFileNames = {
           enable = true;
           anonymiseByDefault = true;
@@ -22,7 +22,7 @@
         betterGifAltText.enable = true;
         betterGifPicker.enable = true;
         betterSessions = {
-          enable = true;
+          enable = false;
           backgroundCheck = false;
         };
         betterSettings = {
@@ -56,7 +56,7 @@
           type = 0;
         };
         dearrow = {
-          enable = true;
+          enable = false;
           hideButton = false;
           replaceElements = 0;
           dearrowByDefault = false;
@@ -109,7 +109,7 @@
           zoomSpeed = 0.1;
         };
         implicitRelationships = {
-          enable = true;
+          enable = false;
           sortByAffinity = true;
         };
         loadingQuotes = {
@@ -224,7 +224,7 @@
           includeBlockedUsers = false;
         };
         typingTweaks = {
-          enable = true;
+          enable = false;
           alternativeFormatting = true;
           showRoleColors = true;
           showAvatars = true;

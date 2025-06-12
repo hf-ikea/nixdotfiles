@@ -70,15 +70,13 @@
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         inputs.nixos-unified.flakeModules.default
-        #inputs.nixos-unified.flakeModules.autoWire
         ./pkgs
         ./config-module.nix
       ];
 
       systems = [ "x86_64-linux" ];
       perSystem =
-        { config
-        , pkgs
+        { pkgs
         , ...
         }: {
           formatter = pkgs.nixpkgs-fmt;
@@ -86,10 +84,8 @@
 
       flake =
         let
-          inherit (inputs.nixpkgs.lib) nixosSystem;
           mod = "${self}/system";
           homemod = "${self}/home";
-          homeImports = import "${self}/home/profiles";
         in
         {
           nixosConfigurations."celeste" = self.nixos-unified.lib.mkLinuxSystem { home-manager = true; } {
@@ -102,35 +98,18 @@
               "${mod}/core"
               "${mod}/hardware/nvidia_desktop.nix"
 
+              "${mod}/programs/catppuccin.nix"
               "${mod}/programs/sddm.nix"
-              #"${mod}/programs/hyprland.nix"
               "${mod}/programs/plasma.nix"
               "${mod}/programs/game.nix"
               {
-                home-manager.users.emi = { pkgs, ... }: {
-                  imports =
-                    [
-                      self.homeModules.default
-                      "${homemod}/programs/spicetify.nix"
-                      "${homemod}/programs/plasma"
-                      "${homemod}/programs/nixcord.nix"
-                    ];
-                  home = {
-                    homeDirectory = inputs.nixpkgs.lib.mkForce "/home/emi";
-                    packages = with pkgs; [
-                      prismlauncher
-                      clang-tools
-                      cmake
-                      mpv
-                      syncplay
-                      transmission_4-gtk
-                      kicad
-
-                      firefox # remove later
-
-                      fortune
-                    ];
-                  };
+                home-manager.users.emi = {
+                  imports = [
+                    self.homeModules.default
+                    "${homemod}/programs/spicetify.nix"
+                    "${homemod}/programs/plasma"
+                    "${homemod}/programs/nixcord.nix"
+                  ];
                 };
               }
             ];
@@ -147,40 +126,32 @@
               "${mod}/core"
               "${mod}/core/sops.nix"
               "${mod}/core/impermanence.nix"
+
+              "${mod}/programs/catppuccin.nix"
               "${mod}/programs/sddm.nix"
               "${mod}/programs/plasma.nix"
               "${mod}/programs/game.nix"
               inputs.t480-fingerprint-nixos.nixosModules."06cb-009a-fingerprint-sensor"
               {
-                home-manager.users.iris = { pkgs, ... }: {
+                home-manager.users.iris = {
                   imports = [
                     self.homeModules.default
                mp     inputs.sops-nix.homeManagerModules.sops
                     "${homemod}/programs/plasma"
                     "${homemod}/programs/nixcord.nix"
                   ];
-                  home = {
-                    packages = with pkgs; [
-		      python3
-                      prismlauncher
-                    ];
-                  };
                 };
               }
             ];
           };
-          homeModules.default =
-            { config
-            , pkgs
-            , ...
-            }: {
-              imports = [
-                "${homemod}/programs"
-                "${homemod}/terminal/programs"
-                "${homemod}/terminal/emulators/foot.nix"
-                inputs.catppuccin.homeModules.catppuccin
-              ];
-            };
+          homeModules.default = {
+            imports = [
+              "${homemod}/programs"
+              "${homemod}/terminal/programs"
+              "${homemod}/terminal/emulators/foot.nix"
+              inputs.catppuccin.homeModules.catppuccin
+            ];
+          };
         };
     };
 }

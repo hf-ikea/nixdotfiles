@@ -1,6 +1,4 @@
-{ config
-, pkgs
-, lib
+{ lib
 , ...
 }:
 with lib; {
@@ -11,11 +9,11 @@ with lib; {
         options = {
           username = mkOption {
             type = types.str;
-            default = "iris";
+            default = "emi";
           };
           hostname = mkOption {
             type = types.str;
-            default = "olympia";
+            default = "celeste";
           };
           wallpaper = mkOption {
             type = types.str;

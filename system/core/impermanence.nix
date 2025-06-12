@@ -1,4 +1,4 @@
-{ flake, pkgs, lib, config, ... }:
+{ flake, lib, ... }:
 let
   inherit (flake.config) params;
 in
