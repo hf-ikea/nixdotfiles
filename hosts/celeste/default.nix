@@ -21,14 +21,21 @@ in
       mpv
       syncplay
       transmission_4-gtk
-      kicad
+      #kicad
 
       firefox # remove later
 
       fortune
+
+      linux-wifi-hotspot
     ];
   };
 
+  programs.alvr = {
+    enable = true;
+    openFirewall =  true;
+  };
+  
   # Bootloader.
   boot.loader = {
     grub = {
