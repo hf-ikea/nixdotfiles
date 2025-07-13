@@ -13,12 +13,14 @@ in
     ../../config-module.nix
   ];
   networking.hostName = "olympia";
-  params.username = "iris";
 
    home-manager.users.${params.username}.home = {
     packages = with pkgs; [
       mpv
       syncplay
+
+      cqrlog
+      wsjtx
     ];
   };
 

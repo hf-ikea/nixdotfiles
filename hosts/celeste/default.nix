@@ -15,23 +15,18 @@ in
   home-manager.users.${params.username}.home = {
     packages = with pkgs; [
       prismlauncher
-      clang-tools
-      cmake
       mpv
       syncplay
-      transmission_4-gtk
+      #transmission_4-gtk
       #kicad
+      #linux-wifi-hotspot
 
       firefox # remove later
-
-      fortune
-
-      linux-wifi-hotspot
     ];
   };
 
   programs.alvr = {
-    enable = true;
+    enable = false;
     openFirewall =  true;
   };
   

@@ -23,11 +23,9 @@ in
       description = params.username;
       group = params.username;
       extraGroups = [ "networkmanager" "wheel" "plugdev" "dialout" params.username ];
-      packages = with pkgs; [
-        devenv
-        cqrlog
-        wsjtx
-      ];
+      # packages = with pkgs; [
+      #   hello
+      # ];
     };
   };
 
