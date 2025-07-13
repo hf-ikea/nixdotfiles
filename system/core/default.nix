@@ -10,11 +10,39 @@ in
   environment.systemPackages = with pkgs; [
     nixd
   ];
+
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # fish!!
-  users.defaultUserShell = pkgs.bash;
+  users = {
+    defaultUserShell = pkgs.bash;
+    groups.${params.username} = { };
+    users.${params.username} = {
+      isNormalUser = lib.mkForce true;
+      isSystemUser = lib.mkForce false;
+      description = params.username;
+      group = params.username;
+      extraGroups = [ "networkmanager" "wheel" "plugdev" "dialout" params.username ];
+      packages = with pkgs; [
+        devenv
+        cqrlog
+        wsjtx
+      ];
+    };
+  };
+
+  home-manager = {
+    backupFileExtension = "backup";
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.${params.username} = {
+      home = {
+        stateVersion = "24.11";
+        homeDirectory = lib.mkForce "/home/${params.username}";
+      };
+    };
+  };
+
   # fish cant be login shell :((
   programs.bash = {
     interactiveShellInit = ''
@@ -28,34 +56,6 @@ in
   programs.foot = {
     enableFishIntegration = true;
   };
-
-  # users.defaultUserShell = pkgs.zsh;
-  # programs.zsh = {
-  #   enable = true;
-  # };
-
-  users.users.${params.username} = {
-    isNormalUser = lib.mkForce true;
-    isSystemUser = lib.mkForce false;
-    description = params.username;
-    group = params.username;
-    extraGroups = [ "networkmanager" "wheel" params.username ];
-    packages = with pkgs; [
-      devenv
-    ];
-  };
-
-  home-manager.users.${params.username} = {
-    home = {
-      stateVersion = "24.11";
-      homeDirectory = lib.mkForce "/home/${params.username}";
-    };
-  };
-
-  users.groups.${params.username} = { };
-
-  home-manager.backupFileExtension = "backup";
-  home-manager.useGlobalPkgs = true;
 
   nix = {
     settings = {

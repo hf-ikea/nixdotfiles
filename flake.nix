@@ -126,12 +126,13 @@
               "${mod}/core"
               "${mod}/core/sops.nix"
               "${mod}/core/impermanence.nix"
+              "${mod}/core/virt-manager.nix"
 
               "${mod}/programs/catppuccin.nix"
               "${mod}/programs/sddm.nix"
               "${mod}/programs/plasma.nix"
               "${mod}/programs/game.nix"
-              inputs.t480-fingerprint-nixos.nixosModules."06cb-009a-fingerprint-sensor"
+              #inputs.t480-fingerprint-nixos.nixosModules."06cb-009a-fingerprint-sensor"
               {
                 home-manager.users.iris = {
                   imports = [
@@ -139,6 +140,7 @@
                     inputs.sops-nix.homeManagerModules.sops
                     "${homemod}/programs/plasma"
                     "${homemod}/programs/nixcord.nix"
+                    "${homemod}/programs/spicetify.nix"
                   ];
                 };
               }

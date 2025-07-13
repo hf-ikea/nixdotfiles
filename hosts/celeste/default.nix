@@ -11,8 +11,6 @@ in
     ./hardware-configuration.nix
     ../../config-module.nix
   ];
-  params.username = lib.mkForce "emi";
-
   networking.hostName = "celeste";
 
   home-manager.users.${params.username}.home = {
