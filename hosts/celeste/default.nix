@@ -25,6 +25,15 @@ in
     ];
   };
 
+  services.smartd = {
+    enable = true;
+    devices = [
+      {
+        device = "/dev/disk/by-id/ata-Samsung_SSD_870_EVO_500GB_S6PXNZ0T705726P";
+      }
+    ];
+  };
+
   programs.alvr = {
     enable = false;
     openFirewall =  true;

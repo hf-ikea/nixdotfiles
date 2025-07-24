@@ -51,9 +51,12 @@ in
       fi
     '';
   };
+
   programs.foot = {
     enableFishIntegration = true;
   };
+
+  programs.command-not-found.enable = true;
 
   nix = {
     settings = {

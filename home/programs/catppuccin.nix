@@ -3,7 +3,7 @@
     enable = true;
     flavor = "mocha";
     accent = "mauve";
-    vscode = {
+    vscode.profiles.default = {
       accent = "mauve";
       settings = {
         boldKeywords = true;
