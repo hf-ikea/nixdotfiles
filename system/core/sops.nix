@@ -36,6 +36,11 @@ in
         wakatime_cfg = {
           path = "/home/${params.username}/.wakatime.cfg";
         };
+        tqsl_cert = {
+          format = "binary";
+          sopsFile = "${secretspath}/cert.p12";
+          path = "/home/${params.username}/.tqsl/cert.p12";
+        };
       };
     };
   };

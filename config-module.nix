@@ -9,7 +9,7 @@ with lib; {
         options = {
           username = mkOption {
             type = types.str;
-            default = "emi";
+            default = "iris";
           };
           wallpaper = mkOption {
             type = types.str;
