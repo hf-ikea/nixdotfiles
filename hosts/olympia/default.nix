@@ -20,7 +20,9 @@ in
       syncplay
 
       cqrlog
-      wsjtx
+      wsjtz
+      tqsl
+      fldigi
     ];
   };
 
