@@ -36,9 +36,9 @@ in
 
   programs.alvr = {
     enable = false;
-    openFirewall =  true;
+    openFirewall = true;
   };
-  
+
   # Bootloader.
   boot.loader = {
     grub = {

@@ -1,4 +1,4 @@
-{ flake, lib, ... }:
+{ flake, lib, config, ... }:
 let
   inherit (flake.config) params;
 in
@@ -16,11 +16,11 @@ in
     users.${params.username} = {
       directories = [
         "Documents"
-        ".steam"
+        lib.mkIf (config.networking.hostName != "everest") ".steam"
       ];
       files = [
         { file = ".zsh_history"; parentDirectory = { user = params.username; group = params.username; }; }
-        { file = ".config/dolphinrc"; parentDirectory = { user = params.username; group = params.username; }; }
+        lib.mkIf (config.networking.hostName != "everest") { file = ".config/dolphinrc"; parentDirectory = { user = params.username; group = params.username; }; }
       ];
     };
   };
@@ -28,6 +28,7 @@ in
   services.openssh = {
     knownHosts = {
       "github.com".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl";
+      "everest".publicKey = "ssh-ed25518 AAAAC3NzaC1lZDI1NTE5AAAAINbIspmlunZlvfzGui/OoTxIz8vCaYJRMwKYcgK6zVMi";
     };
   };
 

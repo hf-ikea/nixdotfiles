@@ -1,4 +1,4 @@
-{ flake, pkgs, config, ... }:
+{ flake, pkgs, config, lib, ... }:
 let
   inherit (flake.config) params;
   secretspath = builtins.toString flake.inputs.nix-secrets;
@@ -23,20 +23,32 @@ in
     sops = {
       age.keyFile = agekeyfile;
       defaultSopsFile = "${secretspath}/secrets.json";
-      secrets = {
-        age_identity = {
-          path = "/home/${params.username}/.config/sops/age/keys.txt";
-        };
-        ssh_private = {
-          path = "/home/${params.username}/.ssh/id_ed25519";
-        };
-        ssh_public = {
-          path = "/home/${params.username}/.ssh/id_ed25519.pub";
-        };
-        wakatime_cfg = {
-          path = "/home/${params.username}/.wakatime.cfg";
-        };
-      };
+      secrets = lib.mkMerge [
+        {
+          age_identity = {
+            path = "/home/${params.username}/.config/sops/age/keys.txt";
+          };
+        }
+        (lib.mkIf (config.networking.hostName == "olympia") {
+          ssh_private = {
+            path = "/home/${params.username}/.ssh/id_ed25519";
+          };
+          ssh_public = {
+            path = "/home/${params.username}/.ssh/id_ed25519.pub";
+          };
+          wakatime_cfg = {
+            path = "/home/${params.username}/.wakatime.cfg";
+          };
+        })
+        (lib.mkIf (config.networking.hostName == "everest") {
+          everest_ssh_private = {
+            path = "/home/${params.username}/.ssh/id_ed25519";
+          };
+          everest_ssh_public = {
+            path = "/home/${params.username}/.ssh/id_ed25519.pub";
+          };
+        })
+      ];
     };
   };
 

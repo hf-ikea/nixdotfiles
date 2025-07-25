@@ -1,6 +1,7 @@
 { lib
 , flake
 , pkgs
+, config
 , ...
 }:
 let
@@ -75,11 +76,15 @@ in
     };
   };
 
-  fonts.packages = with pkgs; [
-    font-awesome
-    jetbrains-mono
-    liberation_ttf
-    meslo-lgs-nf
+  fonts = lib.mkMerge [
+    { packages = [ pkgs.meslo-lgs-nf ]; }
+    (lib.mkIf (config.networking.hostName != "everest") {
+      packages = [
+        pkgs.font-awesome
+        pkgs.jetbrains-mono
+        pkgs.liberation_ttf
+      ];
+    })
   ];
 
   programs.dconf.enable = true;
@@ -98,18 +103,6 @@ in
 
   networking.firewall = {
     enable = true;
-    allowedTCPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      } # KDE Connect
-    ];
-    allowedUDPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      } # KDE Connect
-    ];
   };
 
   # AUDIO

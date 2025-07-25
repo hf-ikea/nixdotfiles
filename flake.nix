@@ -146,6 +146,27 @@
               }
             ];
           };
+          nixosConfigurations."everest" = self.nixos-unified.lib.mkLinuxSystem { home-manager = true; } {
+            nixpkgs = {
+              hostPlatform = "x86_64-linux";
+              config.allowUnfree = true;
+            };
+            imports = [
+              inputs.impermanence.nixosModules.impermanence
+              ./hosts/everest
+              "${mod}/core"
+              "${mod}/core/sops.nix"
+              "${mod}/core/impermanence.nix"
+              {
+                home-manager.users.iris = {
+                  imports = [
+                    "${homemod}/terminal/programs"
+                    inputs.sops-nix.homeManagerModules.sops
+                  ];
+                };
+              }
+            ];
+          };
           homeModules.default = {
             imports = [
               "${homemod}/programs"

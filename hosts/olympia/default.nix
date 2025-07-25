@@ -14,7 +14,7 @@ in
   ];
   networking.hostName = "olympia";
 
-   home-manager.users.${params.username}.home = {
+  home-manager.users.${params.username}.home = {
     packages = with pkgs; [
       mpv
       syncplay
@@ -39,7 +39,7 @@ in
   };
 
   hardware.rtl-sdr.enable = true;
-  
+
   # services."06cb-009a-fingerprint-sensor" = {
   #   enable = true;
   #   backend = "libfprint-tod";

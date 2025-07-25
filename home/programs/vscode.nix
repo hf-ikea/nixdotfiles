@@ -10,7 +10,7 @@
         mshr-h.veriloghdl
         leonardssh.vscord
         rust-lang.rust-analyzer
-        
+
       ];
       userSettings = {
         "editor.fontSize" = 16;
